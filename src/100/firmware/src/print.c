@@ -29,7 +29,7 @@ void print_dec(unsigned int val)
 		unsigned int test = current_number%10;
 		print_chr('c');
 		//char test2 = test + '0';
-		test2 = 48;
+		char test2 = 48;
 		print_chr('r');
 		buffer[i++] = test2;
 		print_chr('a');
