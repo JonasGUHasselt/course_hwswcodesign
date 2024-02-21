@@ -29,8 +29,11 @@ void print_dec(unsigned int val)
 	print_chr('l');
 	while(absolute_value_number!=0)
 	{
+		print_chr('w');
 		buffer[i++] = absolute_value_number%10+'0';
+		print_chr('o');
 		absolute_value_number=absolute_value_number/10;
+		print_chr('w');
 	}
 	print_chr('l');
 	if(val < 0)
