@@ -205,7 +205,7 @@ begin
         generic map (
             G_DATA_WIDTH => G_DATA_WIDTH, 
             FNAME_HEX => "C:\Users\jonas\Documents\shallow_root_file\hwsw_co_design\forked_repo\src\100\firmware\firmware.hex_example",
-            FNAME_OUT => "C:\Users\jonas\Documents\shallow_root_file\hwsw_co_design\Oefeningen\Week1\Oefening101\simulation_output.dat"
+            FNAME_OUT => "C:\Users\jonas\Documents\shallow_root_file\hwsw_co_design\Oefeningen\Week1\Oefening102\simulation_output.dat"
         ) port map (
             resetn => resetn_i,
             clock => clock_i,

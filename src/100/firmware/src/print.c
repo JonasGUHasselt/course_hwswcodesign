@@ -49,7 +49,8 @@ void print_dec(unsigned int val)
 		buffer[0] = '0';
 		buffer[1] = '\0';
 	}   
-
+	print_chr('h');
+	print_chr(buffer[0]);
 	print_str(buffer);
 }
 
