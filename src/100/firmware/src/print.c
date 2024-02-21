@@ -30,7 +30,7 @@ void print_dec(unsigned int val)
 	while(absolute_value_number!=0)
 	{
 		buffer[i++] = absolute_value_number%10+'0';
-		absolute_value_number/=10;
+		absolute_value_number=absolute_value_number/10;
 	}
 	print_chr('l');
 	if(val < 0)
