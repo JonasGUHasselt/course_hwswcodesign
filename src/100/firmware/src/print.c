@@ -21,11 +21,36 @@ void print_str(const char *p)
 
 void print_dec(unsigned int val)
 {
-	print_chr('n');
-	print_chr('o');
-	print_chr('p');
-	print_chr('e');
-	print_chr('\n');
+	char buffer[50];
+	int i = 0;
+
+	unsigned int absolute_value_number = val < 0 ? -val : val;
+
+	while(absolute_value_number!=0)
+	{
+		buffer[i++] = absolute_value_number%10+'0';
+		absolute_value_number/=10;
+	}
+
+	if(val < 0)
+		buffer[i++] = '-';
+
+	buffer[i] = '\0';
+
+	for(int t = 0; t < i/2; t++)
+	{
+		buffer[t] ^= buffer[i-t-1];
+		buffer[i-t-1] ^= buffer[t];
+		buffer[t] ^= buffer[i-t-1];
+	}
+
+	if(val == 0)
+	{
+		buffer[0] = '0';
+		buffer[1] = '\0';
+	}   
+
+	print_str(&buffer);
 }
 
 void print_hex(unsigned int val, int digits)
