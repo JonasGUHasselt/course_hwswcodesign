@@ -50,7 +50,7 @@ void print_dec(unsigned int val)
 		buffer[1] = '\0';
 	}   
 
-	print_str(&buffer);
+	print_str(buffer);
 }
 
 
