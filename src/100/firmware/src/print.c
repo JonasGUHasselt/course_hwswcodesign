@@ -26,7 +26,11 @@ void print_dec(unsigned int val)
 
 	while(current_number!=0)
 	{
-		buffer[i++] = current_number%10;//+'0';
+		print_chr('k');
+		char asc = current_number%10 +'0';
+		print_chr('u');
+		print_chr('w');
+		buffer[i++] = current_number%10 +'0';
 		print_chr('o');
 		current_number=current_number/10;
 		print_chr('w');
