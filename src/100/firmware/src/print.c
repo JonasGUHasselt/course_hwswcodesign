@@ -26,14 +26,7 @@ void print_dec(unsigned int val)
 
 	while(current_number!=0)
 	{
-		unsigned int test = current_number%10;
-		print_chr('c');
-		int test2 = test + '0';
-		print_chr('r');
-		buffer[i++] = (char) test2;
-		print_chr('a');
-
-		buffer[i++] = current_number%10+'0';
+		buffer[i++] = current_number%10;//+'0';
 		print_chr('o');
 		current_number=current_number/10;
 		print_chr('w');
