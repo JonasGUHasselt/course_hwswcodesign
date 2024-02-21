@@ -20,7 +20,7 @@ void print_str(const char *p)
 
 void print_dec(unsigned int val)
 {
-	char buffer[5];
+	char buffer[10];
 	int i = 0;
 	unsigned int current_number = val;
 
