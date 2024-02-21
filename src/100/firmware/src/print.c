@@ -18,26 +18,22 @@ void print_str(const char *p)
 		*((volatile unsigned int*)OUTPORT) = *(p++);
 }
 
-
 void print_dec(unsigned int val)
 {
-	print_chr('h');
 	char buffer[50];
 	int i = 0;
-	print_chr('e');
-	unsigned int absolute_value_number = val < 0 ? -val : val;
-	print_chr('l');
-	while(absolute_value_number!=0)
+	unsigned int current_number = val;
+
+	while(current_number!=0)
 	{
 		print_chr('w');
-		buffer[i++] = absolute_value_number%10+'0';
+		buffer[i++] = current_number%10+'0';
 		print_chr('o');
-		absolute_value_number=absolute_value_number/10;
+		current_number=current_number/10;
 		print_chr('w');
 	}
+	
 	print_chr('l');
-	if(val < 0)
-		buffer[i++] = '-';
 
 	buffer[i] = '\0';
 	print_chr('o');
