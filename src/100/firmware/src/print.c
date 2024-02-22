@@ -22,13 +22,14 @@ void print_dec(unsigned int val)
 {
 	char buffer[10];
 	int i = 0;
-	int current_number = val;
+	unsigned int current_number = val;
 
 	while(current_number!=0)
 	{
 		print_chr('w');
 		print_chr(current_number + '0');
-		print_chr("0123456789"[current_number % 10]);
+		//print_chr("0123456789"[current_number % 10]);
+		print_chr("0123456789"[current_number - (current_number/10) * 10]);
 		print_chr(i+'0');
 		//buffer[i++] = current_number % 10 +'0';
 		print_chr('o');
