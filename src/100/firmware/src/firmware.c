@@ -13,5 +13,5 @@ void main(void) {
 }
 
 unsigned int convert(unsigned int x) {
-    return (x - 32) * (5/9);
+    return (unsigned int)((x - 32) * (5.0/9.0));
 }
