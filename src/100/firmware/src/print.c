@@ -22,6 +22,7 @@ void print_dec(unsigned int val)
 {
 	char buffer[20];
 	int i = 0;
+	int n = val;
 	
 	if(val == 0)
 	{
@@ -31,8 +32,15 @@ void print_dec(unsigned int val)
 		return;
 	}  
 	
-	int current_number = val;
-
+	while (n != 0) {
+		print_chr('b');
+		buffer[i] = (n % 10) + '0';
+		print_chr('e');
+		n = n / 10;
+		print_chr('g');
+		i++;
+	}
+	/*
 	while(current_number!=0)
 	{
 		print_chr('w');
@@ -44,7 +52,7 @@ void print_dec(unsigned int val)
 		print_chr('o');
 		current_number=current_number/10;
 		print_chr('w');
-	}
+	}*/
 	
 	print_chr('l');
 
