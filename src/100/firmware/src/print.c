@@ -20,22 +20,28 @@ void print_str(const char *p)
 
 void print_dec(unsigned int val)
 {
-	char buffer[10];
+	char buffer[20];
 	int i = 0;
+	
+	if(val == 0)
+	{
+		buffer[0] = '0';
+		buffer[1] = '\0';
+		print_str(buffer);
+		return 0;
+	}  
+	
 	unsigned int current_number = val;
 
-	if(val%(i+10) == 4)
-	{
-		print_chr('z');
-	}
-
-	while(current_number!=0)
+	while(current_number>0)
 	{
 		print_chr('w');
 		print_chr(current_number + '0');
-		print_chr("0123456789"[current_number % 10]);
+
+		*((volatile unsigned int*)OUTPORT) = "0123456789"[current_number % 10];
+		
 		print_chr(i+'0');
-		buffer[i++] = current_number % 10 +'0';
+		//buffer[i++] = current_number % 10 +'0';
 		print_chr('o');
 		current_number=current_number/10;
 		print_chr('w');
@@ -51,12 +57,6 @@ void print_dec(unsigned int val)
 		buffer[i-t-1] ^= buffer[t];
 		buffer[t] ^= buffer[i-t-1];
 	}
-
-	if(val == 0)
-	{
-		buffer[0] = '0';
-		buffer[1] = '\0';
-	}   
 
 	print_str(buffer);
 }
