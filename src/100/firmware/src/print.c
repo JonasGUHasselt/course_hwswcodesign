@@ -20,15 +20,20 @@ void print_str(const char *p)
 
 void print_dec(unsigned int val)
 {
+	print_chr('b');
 	char buffer[10];
 	char *p = buffer;
 	while (val || p == buffer) {
+		print_chr('e');
 		*(p++) = val % 10;
+		print_chr('g');
 		val = val / 10;
 	}
+	print_chr('i');
 	while (p != buffer) {
 		*((volatile unsigned int*)OUTPORT) = '0' + *(--p);
 	}
+	print_chr('n');
 	print_chr('\n');
 }
 	/*
