@@ -28,9 +28,9 @@ void print_dec(unsigned int val)
 	{
 		print_chr('w');
 		print_chr(current_number + '0');
-		int calc = current_number % 10;
+		char calc = current_number % 10;
 		print_chr(i+'0');
-		print_chr(calc + '0');
+		print_chr(calc);
 		//buffer[i++] = current_number % 10 +'0';
 		print_chr('o');
 		current_number=current_number/10;
