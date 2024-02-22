@@ -29,10 +29,7 @@ void print_dec(unsigned int val)
 		print_chr('w');
 		print_chr(current_number + '0');
 		int calc = current_number % 10;
-		if (calc != 4)
-		{
-			print_chr('c');
-		}
+		print_chr("0123456789"[calc]);
 		print_chr(i+'0');
 		print_chr(calc);
 		//buffer[i++] = current_number % 10 +'0';
