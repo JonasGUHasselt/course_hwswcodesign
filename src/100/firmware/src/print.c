@@ -24,7 +24,7 @@ void print_dec(unsigned int val)
 	int i = 0;
 	unsigned int current_number = val;
 
-	if(14%(i+10) == 4)
+	if(current_number%(i+10) == 4)
 	{
 		print_chr('z');
 	}
