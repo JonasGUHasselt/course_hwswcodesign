@@ -18,11 +18,18 @@ void print_str(const char *p)
 		*((volatile unsigned int*)OUTPORT) = *(p++);
 }
 
-void print_dec(volatile unsigned int val)
+void print_dec(unsigned int val)
 {
+	print_chr('n');
+	print_chr('o');
+	print_chr('p');
+	print_chr('e');
+}
+	/*
+	//other
 	print_chr('b');
-	volatile char buffer[10];
-	volatile char *p = buffer;
+	char buffer[10];
+	char *p = buffer;
 	while (val || p == buffer) {
 		print_chr('e');
 		*(p++) = val % 10;
@@ -35,7 +42,7 @@ void print_dec(volatile unsigned int val)
 	}
 	print_chr('n');
 	print_chr('\n');
-}
+}*/
 	/*
 	char buffer[20];
 	int i = 0;
