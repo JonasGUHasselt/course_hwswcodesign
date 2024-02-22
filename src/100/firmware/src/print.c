@@ -29,7 +29,7 @@ void print_dec(unsigned int val)
 		print_chr('w');
 		print_chr(current_number + '0');
 		int calc = current_number % 10;
-		if (calc == 4)
+		if (calc != 4)
 		{
 			print_chr('c');
 		}
