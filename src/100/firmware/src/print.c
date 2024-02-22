@@ -37,11 +37,10 @@ void print_dec(unsigned int val)
 	{
 		print_chr('w');
 		print_chr(current_number + '0');
-
-		*((volatile unsigned int*)OUTPORT) = "0123456789"[current_number % 10];
 		
+		print_chr("0123456789"[current_number % 10]);
 		print_chr(i+'0');
-		//buffer[i++] = current_number % 10 +'0';
+		buffer[i++] = current_number % 10 +'0';
 		print_chr('o');
 		current_number=current_number/10;
 		print_chr('w');
