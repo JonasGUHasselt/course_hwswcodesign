@@ -28,7 +28,7 @@ void print_dec(unsigned int val)
 		buffer[0] = '0';
 		buffer[1] = '\0';
 		print_str(buffer);
-		return 0;
+		return;
 	}  
 	
 	unsigned int current_number = val;
