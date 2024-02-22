@@ -18,11 +18,11 @@ void print_str(const char *p)
 		*((volatile unsigned int*)OUTPORT) = *(p++);
 }
 
-void print_dec(unsigned int val)
+void print_dec(volatile unsigned int val)
 {
 	print_chr('b');
-	char buffer[10];
-	char *p = buffer;
+	volatile char buffer[10];
+	volatile char *p = buffer;
 	while (val || p == buffer) {
 		print_chr('e');
 		*(p++) = val % 10;
