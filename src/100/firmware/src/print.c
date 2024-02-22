@@ -22,17 +22,17 @@ void print_dec(unsigned int val)
 {
 	char buffer[10];
 	int i = 0;
+	int current_number = val;
 
-	while(val!=0)
+	while(current_number!=0)
 	{
 		print_chr('w');
-		print_chr(val + '0');
-		print_chr("0123456789"[val % 10]);
+		print_chr(current_number + '0');
+		print_chr("0123456789"[current_number % 10]);
 		print_chr(i+'0');
-
 		//buffer[i++] = current_number % 10 +'0';
 		print_chr('o');
-		val=val/10;
+		current_number=current_number/10;
 		print_chr('w');
 	}
 	
@@ -46,6 +46,12 @@ void print_dec(unsigned int val)
 		buffer[i-t-1] ^= buffer[t];
 		buffer[t] ^= buffer[i-t-1];
 	}
+
+	if(val == 0)
+	{
+		buffer[0] = '0';
+		buffer[1] = '\0';
+	}   
 
 	print_str(buffer);
 }
