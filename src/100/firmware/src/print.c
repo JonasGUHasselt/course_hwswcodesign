@@ -28,18 +28,17 @@ void print_dec(unsigned int val)
 	{
 		if ((10/(i+1)) == 10)
 		{
-			print_chr("z");
+			print_chr('z');
 		}
 
 		print_chr('w');
 		print_chr(current_number + '0');
 		print_chr("0123456789"[current_number % 10]);
 		print_chr(i+'0');
-		//buffer[i++] = current_number % 10 +'0';
+		buffer[i++] = current_number % 10 +'0';
 		print_chr('o');
 		current_number=current_number/10;
 		print_chr('w');
-		i++;
 	}
 	
 	print_chr('l');
