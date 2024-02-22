@@ -31,16 +31,16 @@ void print_dec(unsigned int val)
 		return;
 	}  
 	
-	unsigned int current_number = val;
+	int current_number = val;
 
-	while(current_number>0)
+	while(current_number!=0)
 	{
 		print_chr('w');
-		print_chr(current_number + '0');
-		
-		print_chr("0123456789"[current_number % 10]);
+		char digit = "0123456789"[current_number % 10];
+		print_chr('m');
+		print_chr(digit);
 		print_chr(i+'0');
-		buffer[i++] = current_number % 10 +'0';
+		//buffer[i++] = current_number % 10 +'0';
 		print_chr('o');
 		current_number=current_number/10;
 		print_chr('w');
