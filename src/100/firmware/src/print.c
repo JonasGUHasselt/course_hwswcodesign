@@ -27,6 +27,7 @@ void print_dec(unsigned int val)
 	while(current_number!=0)
 	{
 		print_chr('w');
+		print_chr(current_number + '0');
 		int calc = current_number % 10;
 		print_chr(i+'0');
 		print_chr(calc + '0');
