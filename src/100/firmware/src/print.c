@@ -29,7 +29,7 @@ void print_dec(unsigned int val)
 		print_chr(val + '0');
 		print_chr("0123456789"[val % 10]);
 		print_chr(i+'0');
-		print_chr(calc);
+
 		//buffer[i++] = current_number % 10 +'0';
 		print_chr('o');
 		val=val/10;
