@@ -20,21 +20,14 @@ void print_str(const char *p)
 
 void print_dec(unsigned int val)
 {
-	print_chr('n');
-	print_chr('o');
-	print_chr('p');
-	print_chr('e');
-}
-	/*
-	//other
 	print_chr('b');
 	char buffer[10];
 	char *p = buffer;
 	while (val || p == buffer) {
 		print_chr('e');
-		*(p++) = val % 10;
+		*(p++) = (val>>0) % 10;
 		print_chr('g');
-		val = val / 10;
+		val = (val>>0) / 10;
 	}
 	print_chr('i');
 	while (p != buffer) {
@@ -42,7 +35,7 @@ void print_dec(unsigned int val)
 	}
 	print_chr('n');
 	print_chr('\n');
-}*/
+}
 	/*
 	char buffer[20];
 	int i = 0;
