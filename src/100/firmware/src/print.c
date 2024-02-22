@@ -77,8 +77,8 @@ void print_dec(unsigned int val)
 		buffer[t] ^= buffer[i-t-1];
 	}
 
-	print_str(buffer);*/
-}
+	print_str(buffer);
+}*/
 
 
 void print_hex(unsigned int val, int digits)
