@@ -20,6 +20,18 @@ void print_str(const char *p)
 
 void print_dec(unsigned int val)
 {
+	char buffer[10];
+	char *p = buffer;
+	while (val || p == buffer) {
+		*(p++) = val % 10;
+		val = val / 10;
+	}
+	while (p != buffer) {
+		*((volatile unsigned int*)OUTPORT) = '0' + *(--p);
+	}
+	print_chr('\n');
+}
+	/*
 	char buffer[20];
 	int i = 0;
 	int n = val;
@@ -39,7 +51,7 @@ void print_dec(unsigned int val)
 		n = n / 10;
 		print_chr('g');
 		i++;
-	}
+	}*/
 	/*
 	while(current_number!=0)
 	{
@@ -53,7 +65,7 @@ void print_dec(unsigned int val)
 		current_number=current_number/10;
 		print_chr('w');
 	}*/
-	
+	/*
 	print_chr('l');
 
 	buffer[i] = '\0';
@@ -65,7 +77,7 @@ void print_dec(unsigned int val)
 		buffer[t] ^= buffer[i-t-1];
 	}
 
-	print_str(buffer);
+	print_str(buffer);*/
 }
 
 
