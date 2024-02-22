@@ -23,23 +23,20 @@ void print_dec(unsigned int val)
 	char buffer[10];
 	int i = 0;
 	unsigned int current_number = val;
-
-	while(current_number!=0)
-	{
-		if ((10/(i+1)) == 10)
-		{
-			print_chr('z');
-		}
-
-		print_chr('w');
-		print_chr(current_number + '0');
-		print_chr("0123456789"[current_number % 10]);
-		print_chr(i+'0');
-		buffer[i++] = current_number % 10 +'0';
-		print_chr('o');
-		current_number=current_number/10;
-		print_chr('w');
-	}
+	print_chr('w');
+	print_chr("0123456789"[current_number % 10]);
+	print_chr('o');
+	// while(current_number!=0)
+	// {
+	// 	print_chr('w');
+	// 	print_chr(current_number + '0');
+	// 	print_chr("0123456789"[current_number % 10]);
+	// 	print_chr(i+'0');
+	// 	buffer[i++] = current_number % 10 +'0';
+	// 	print_chr('o');
+	// 	current_number=current_number/10;
+	// 	print_chr('w');
+	// }
 	
 	print_chr('l');
 
