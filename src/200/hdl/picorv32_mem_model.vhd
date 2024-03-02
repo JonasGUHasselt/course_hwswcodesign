@@ -129,8 +129,8 @@ begin
         elsif rising_edge(clock_i) then 
 
             if(mem_valid_i = '1') then 
-                if write_operation = '1' then 
-                    if mem_addr_i = x"10000000" and mem_ready_i = '1' then 
+                if write_operation = '1' then
+                    if mem_addr_i = x"80000000" and mem_ready_i = '1' then 
                         write(v_line, masked_data);
                         writeline(fh,  v_line);
                     else
