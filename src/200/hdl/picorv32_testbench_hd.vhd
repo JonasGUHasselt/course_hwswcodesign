@@ -142,7 +142,7 @@ architecture Behavioural of picorv32_testbench_hd is
 
 begin
 
-    print_flag <= '1' when mem_addr_i = x"80000000" else '0';
+    print_flag <= '1' when mem_addr_i = x"10000000" else '0';
 
     -------------------------------------------------------------------------------
     -- STIMULI
@@ -242,8 +242,8 @@ begin
     picorv32_mem_model_inst00: component picorv32_mem_model 
         generic map (
             G_DATA_WIDTH => G_DATA_WIDTH, 
-            FNAME_HEX => "/home/jvliegen/vc/github/KULeuven-Diepenbeek/hwswcodedign-course/src/200/firmware/firmware.hex",
-            FNAME_OUT => "/home/jvliegen/vc/github/KULeuven-Diepenbeek/hwswcodedign-course/src/200/firmware/simulation_output.dat"
+            FNAME_HEX => "C:\Users\jonas\Documents\shallow_root_file\hwsw_co_design\forked_repo\src\200\firmware\firmware.hex_example",
+            FNAME_OUT => "C:\Users\jonas\Documents\shallow_root_file\hwsw_co_design\Oefeningen\Week2\Oefening201\simulation_output.dat"
         ) port map (
             resetn => resetn_i,
             clock => clock_i,
