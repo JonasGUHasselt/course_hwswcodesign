@@ -11,7 +11,7 @@ void main(void) {
     print_hex(64, 8);
     print_dec(convert(86));
 }
-
+//13 clock cycles
 unsigned int convert(unsigned int x) {
     return (unsigned int)((x - 32) * (5.0/9.0));
 }
