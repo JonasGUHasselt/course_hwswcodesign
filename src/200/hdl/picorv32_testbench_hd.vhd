@@ -142,7 +142,7 @@ architecture Behavioural of picorv32_testbench_hd is
 
 begin
 
-    print_flag <= '1' when mem_addr_i = x"10000000" else '0';
+    print_flag <= '1' when mem_addr_i = x"80000000" else '0';
 
     -------------------------------------------------------------------------------
     -- STIMULI
