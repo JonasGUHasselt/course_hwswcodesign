@@ -1,6 +1,6 @@
 #include "print.h"
 
-extern unsigned int hwswcd_avg(unsigned int value1, unsigned int value2);
+unsigned int hwswcd_avg(unsigned int value1, unsigned int value2);
 
 void main(void) {
 	volatile unsigned int value1, value2, avg;
@@ -17,4 +17,11 @@ void main(void) {
 	print_str(") = 0x");
 	print_hex(avg, 2);
 	print_str(".");
+}
+
+unsigned int hwswcd_avg(unsigned int value1, unsigned int value2)
+{
+	unsigned int sum = value1 + value2;
+	unsigned int average = sum >> 1;
+	return average;
 }
