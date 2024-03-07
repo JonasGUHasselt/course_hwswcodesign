@@ -13,7 +13,7 @@ void main(void) {
 	print_str("AVG(0x");
 	print_hex(value1, 2);
 	print_str(", ");
-	print_str("AVG(0x");
+	print_str("0x");
 	print_hex(value2, 2);	
 	print_str(") = 0x");
 	print_hex(avg, 2);
