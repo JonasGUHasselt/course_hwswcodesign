@@ -16,19 +16,17 @@ void main(void) {
 
 unsigned int get_hamming_weight(unsigned int x)
 {
-    unsigned int bit_counter = 0;
-    unsigned int filter = 1;
+    unsigned int hamming_weight = 0;
     
-    while (filter > 0)
+    for (unsigned int i=0; i<32; i++)
     {
-
-        if((x & filter) > 0)
+        if (x & 0x00000001)
         {
-            bit_counter++;
+            hamming_weight++;
         }
 
-        filter <<= 1;
+        x << 1;
     }
 
-    return bit_counter;
+    return hamming_weight;
 }
