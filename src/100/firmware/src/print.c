@@ -51,6 +51,7 @@ void print_dec(unsigned int val)
 		char number = 48 + number_to_print[i];
 		print_chr(number);
 	}
+	print_chr('\n');
 }
 
 void print_hex(unsigned int val, int digits)
