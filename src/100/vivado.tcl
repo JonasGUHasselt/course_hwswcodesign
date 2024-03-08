@@ -11,7 +11,7 @@
 # set parameters
 set pname "PicoRV32VivadoProject"
 set srcpath "C:/Users/jonas/Documents/shallow_root_file/hwsw_co_design/forked_repo/src/100"
-set projpath "C:/Users/jonas/Documents/shallow_root_file/hwsw_co_design/Oefeningen/Week1/Oefening101/"
+set projpath "C:/Users/jonas/Documents/shallow_root_file/hwsw_co_design/Oefeningen/Week1/"
 set part "xc7z020clg400-1"
 set board "tul.com.tw:pynq-z2:part0:1.0"
 
