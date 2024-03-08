@@ -18,72 +18,15 @@ void print_str(const char *p)
 		*((volatile unsigned int*)OUTPORT) = *(p++);
 }
 
+
 void print_dec(unsigned int val)
 {
-	print_chr('b');
-	char buffer[10];
-	char *p = buffer;
-	while (val || p == buffer) {
-		print_chr('e');
-		*(p++) = val % 10;
-		print_chr('g');
-		val = val / 10;
-	}
-	print_chr('i');
-	while (p != buffer) {
-		*((volatile unsigned int*)OUTPORT) = '0' + *(--p);
-	}
 	print_chr('n');
+	print_chr('o');
+	print_chr('p');
+	print_chr('e');
 	print_chr('\n');
 }
-	/*
-	char buffer[20];
-	int i = 0;
-	int n = val;
-	
-	if(val == 0)
-	{
-		buffer[0] = '0';
-		buffer[1] = '\0';
-		print_str(buffer);
-		return;
-	}  
-	
-	while (n != 0) {
-		print_chr('b');
-		buffer[i] = (n % 10) + '0';
-		print_chr('e');
-		n = n / 10;
-		print_chr('g');
-		i++;
-	}*/
-	/*
-	while(current_number!=0)
-	{
-		print_chr('w');
-		char digit = "0123456789"[current_number % 10];
-		print_chr('m');
-		print_chr(digit);
-		print_chr(i+'0');
-		//buffer[i++] = current_number % 10 +'0';
-		print_chr('o');
-		current_number=current_number/10;
-		print_chr('w');
-	}*/
-	/*
-	print_chr('l');
-
-	buffer[i] = '\0';
-	print_chr('o');
-	for(int t = 0; t < i/2; t++)
-	{
-		buffer[t] ^= buffer[i-t-1];
-		buffer[i-t-1] ^= buffer[t];
-		buffer[t] ^= buffer[i-t-1];
-	}
-
-	print_str(buffer);
-}*/
 
 
 void print_hex(unsigned int val, int digits)
@@ -92,4 +35,3 @@ void print_hex(unsigned int val, int digits)
 		*((volatile unsigned int*)OUTPORT) = "0123456789ABCDEF"[(val >> i) % 16];
 	print_chr('\n');
 }
-
