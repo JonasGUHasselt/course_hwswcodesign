@@ -41,7 +41,7 @@ architecture Behavioural of picorv32_testbench_hd is
         );
     end component;
 
-    component pcpi_hwswcd_avg is
+    component pcpi_hwswcd_hd is
         port (
             resetn : IN STD_LOGIC;
             clk : IN STD_LOGIC;
@@ -161,7 +161,7 @@ begin
     -------------------------------------------------------------------------------
     -- COPROCESSOR - mul
     -------------------------------------------------------------------------------
-    pcpi_hwswcd_hd_inst00: component pcpi_hwswcd_avg port map(
+    pcpi_hwswcd_hd_inst00: component pcpi_hwswcd_hd port map(
         clk => clock_i,
         resetn => resetn_i,
         pcpi_valid => pcpi_valid_i, 
