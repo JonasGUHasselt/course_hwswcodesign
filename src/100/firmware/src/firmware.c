@@ -3,6 +3,7 @@
 unsigned int get_hamming_weight(unsigned int x);
 unsigned int get_hamming_distance(unsigned int x, unsigned int y);
 unsigned int get_factorial(unsigned int x);
+unsigned int convert(unsigned int x);
 
 void main(void) {
     print_chr('*');
@@ -62,4 +63,27 @@ unsigned int get_factorial(unsigned int x)
     }
 
     return temp;
+}
+
+unsigned int convert(unsigned int x)
+{
+    unsigned int product = 0;
+    unsigned int result = 0;
+    unsigned int division_counter = 0;
+
+    x-=32;
+
+    for (unsigned int i = 0; i < 5; i++)
+    {
+        product += x;
+    }
+    
+    while (product >= 9)
+    {
+        product-=9;
+        division_counter++;
+    }
+    
+    result = division_counter;
+    return result;
 }
