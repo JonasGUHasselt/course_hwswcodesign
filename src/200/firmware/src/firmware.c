@@ -10,7 +10,7 @@ void main(void) {
 
     hd = hwswcd_hd(value1, value2);
 
-	print_str("AVG(0x");
+	print_str("HD(0x");
 	print_hex(value1, 2);
 	print_str(", ");
 	print_str("0x");
