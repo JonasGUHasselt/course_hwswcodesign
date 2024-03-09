@@ -25,7 +25,7 @@ unsigned int get_hamming_weight(unsigned int x)
             hamming_weight++;
         }
 
-        x << 1;
+        x >>= 1;
     }
 
     return hamming_weight;
