@@ -25,6 +25,13 @@ void main(void) {
     unsigned int number = 5;
     print_str("Factorial: ");
     print_dec(get_factorial(number));
+
+    unsigned int temperature_in_fahrenheit = 64;
+    unsigned int temperature_in_celsius = convert(temperature_in_fahrenheit);
+    print_str("Temperature in fahrenheit: ");
+    print_dec(temperature_in_fahrenheit);
+    print_str("\nTemperature in celsius: ");
+    print_dec(temperature_in_celsius);
 }
 
 unsigned int get_hamming_weight(unsigned int x)
