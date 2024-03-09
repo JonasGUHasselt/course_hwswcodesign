@@ -2,6 +2,7 @@
 
 unsigned int get_hamming_weight(unsigned int x);
 unsigned int get_hamming_distance(unsigned int x, unsigned int y);
+unsigned int get_factorial(unsigned int x);
 
 void main(void) {
     print_chr('*');
@@ -19,6 +20,10 @@ void main(void) {
 
     print_str("Hamming distance: ");
     print_dec(get_hamming_distance(number_1, number_2));
+
+    unsigned int number = 5;
+    print_str("Factorial: ");
+    print_dec(get_factorial(number));
 }
 
 unsigned int get_hamming_weight(unsigned int x)
@@ -41,4 +46,20 @@ unsigned int get_hamming_weight(unsigned int x)
 unsigned int get_hamming_distance(unsigned int x, unsigned int y)
 {
     return get_hamming_weight(x ^ y);
+}
+
+unsigned int get_factorial(unsigned int x)
+{
+    unsigned int temp, i;
+
+    if(x==1) return 1;
+    if(x==2) return 2;
+
+    temp = 1;
+
+    for(i=2;i<=x;i++) {
+        temp = temp * i;
+    }
+
+    return temp;
 }
