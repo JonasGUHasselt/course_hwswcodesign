@@ -192,9 +192,9 @@ begin
             CATCH_MISALIGN => '1',
             CATCH_ILLINSN => '1',
             ENABLE_PCPI => '1',
-            ENABLE_MUL => '1',
+            ENABLE_MUL => '0',
             ENABLE_FAST_MUL => '0',
-            ENABLE_DIV => '0',
+            ENABLE_DIV => '1',
             ENABLE_IRQ => '0',
             ENABLE_IRQ_QREGS => '1',
             ENABLE_IRQ_TIMER => '1',
@@ -243,7 +243,7 @@ begin
         generic map (
             G_DATA_WIDTH => G_DATA_WIDTH, 
             FNAME_HEX => "C:\Users\jonas\Documents\shallow_root_file\hwsw_co_design\forked_repo\src\200\firmware\firmware.hex_example",
-            FNAME_OUT => "C:\Users\jonas\Documents\shallow_root_file\hwsw_co_design\Oefeningen\Week2\Oefening201\simulation_output.dat"
+            FNAME_OUT => "C:\Users\jonas\Documents\shallow_root_file\hwsw_co_design\Oefeningen\Week2\Oefening202\simulation_output.dat"
         ) port map (
             resetn => resetn_i,
             clock => clock_i,
