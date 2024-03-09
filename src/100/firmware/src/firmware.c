@@ -1,6 +1,7 @@
 #include "print.h"
 
 unsigned int get_hamming_weight(unsigned int x);
+unsigned int get_hamming_distance(unsigned int x, unsigned int y);
 
 void main(void) {
     print_chr('*');
@@ -29,4 +30,9 @@ unsigned int get_hamming_weight(unsigned int x)
     }
 
     return hamming_weight;
+}
+
+unsigned int get_hamming_distance(unsigned int x, unsigned int y)
+{
+    return get_hamming_weight(x ^ y);
 }
