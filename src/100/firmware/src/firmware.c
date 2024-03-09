@@ -13,6 +13,12 @@ void main(void) {
     unsigned int hamming_weight = get_hamming_weight(60);
     print_str("Hamming weight: ");
     print_dec(hamming_weight);
+
+    unsigned int number_1 = 40;
+    unsigned int number_2 = 60;
+
+    print_str("Hamming distance: ");
+    print_dec(get_hamming_distance(number_1, number_2));
 }
 
 unsigned int get_hamming_weight(unsigned int x)
