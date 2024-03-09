@@ -46,6 +46,6 @@ start:
   /* break - trap */
   ebreak
 
-hwswcd_hd:
+hwswcd_avg:
   mul a0, a0, a1
   ret
