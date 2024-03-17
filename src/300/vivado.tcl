@@ -9,11 +9,11 @@
 ################################################################################
 
 # set parameters
-set pname "hwswcodesign_300"
-set srcpath "/home/jvliegen/vc/github/KULeuven-Diepenbeek/course_hwswcodesign/src/300/hdl"
-set projpath "/home/jvliegen/sandbox/course_hwswcodesign"
-set part "xc7vx485tffg1761-2"
-set board "xilinx.com:vc707:part0:1.3"
+set pname "PicoRV32VivadoProject"
+set srcpath "C:/Users/jonas/Documents/shallow_root_file/hwsw_co_design/forked_repo/src/300/hdl"
+set projpath "C:/Users/jonas/Documents/shallow_root_file/hwsw_co_design/Oefeningen/Week5_6"
+set part "xc7z020clg400-1"
+set board "tul.com.tw:pynq-z2:part0:1.0"
 
 # delete older versions
 cd $projpath

@@ -90,7 +90,7 @@ begin
         generic map (
             G_BASE_ADDRESS => C_BASE_ADDRESS_0,
             G_HIGH_ADDRESS => C_HIGH_ADDRESS_0,
-            FNAME_HEX => "/home/jvliegen/vc/github/KULeuven-Diepenbeek/course_hwswcodesign/src/300/firmware/firmware.hex"
+            FNAME_HEX => "C:\Users\jonas\Documents\shallow_root_file\hwsw_co_design\forked_repo\src\300\firmware\firmware.hex_example"
         ) port map (
             resetn => resetn_i,
             clock => clock_i,
@@ -112,7 +112,7 @@ begin
     APB_print_inst00: component APB_print generic map(
             G_BASE_ADDRESS => C_BASE_ADDRESS_1,
             G_HIGH_ADDRESS => C_HIGH_ADDRESS_1,
-            FNAME_OUT => "/home/jvliegen/vc/github/KULeuven-Diepenbeek/course_hwswcodesign/src/300/firmware/simulation_output.dat"
+            FNAME_OUT => "C:\Users\jonas\Documents\shallow_root_file\hwsw_co_design\Oefeningen\Week5_6\Oefening301\simulation_output.dat"
         ) port map (
             resetn => resetn_i,
             clock => clock_i,
