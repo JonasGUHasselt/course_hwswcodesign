@@ -14,5 +14,7 @@
 #define HAMMING_DISTANCE_OPERAND_Y  (*(volatile unsigned int *) HAMMING_DISTANCE_REG1_ADDRESS)
 #define HAMMING_DISTANCE_OUT        (*(volatile unsigned int *) HAMMING_DISTANCE_REG2_ADDRESS)
 
+uint32_t get_hamming_distance(uint32_t x, uint32_t y);
+
 #endif
   
