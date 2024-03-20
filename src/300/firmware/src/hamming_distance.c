@@ -2,20 +2,24 @@
 #include "hamming_distance.h"
 #include "counter.h"
 
-uint32_t get_hamming_distance(uint32_t x, uint32_t y)
+unsigned int get_hamming_weight(unsigned int x)
 {
-    uint32_t counter = 0;
-
-    HAMMING_DISTANCE_OPERAND_X = x;
-    HAMMING_DISTANCE_OPERAND_Y = y;
-    CALCULATE = 1;
-    counter_start();
-    while (counter < 32)
+    unsigned int hamming_weight = 0;
+    
+    for (unsigned int i=0; i<32; i++)
     {
-        counter = counter_get_value();
-    }
-    counter_stop();
+        if (x & 0x00000001)
+        {
+            hamming_weight++;
+        }
 
-    CALCULATE = 0;
-    return HAMMING_DISTANCE_OUT;
+        x >>= 1;
+    }
+
+    return hamming_weight;
+}
+
+unsigned int get_hamming_distance(unsigned int x, unsigned int y)
+{
+    return get_hamming_weight(x ^ y);
 }
