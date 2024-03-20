@@ -25,7 +25,6 @@ architecture Behavioural of APB_counter_tb is
 
     component APB_counter is
         generic (
-            G_DATA_WIDTH : integer := 32;
             G_BASE_ADDRESS : STD_LOGIC_VECTOR(32-1 downto 0) := x"00000000";
             G_HIGH_ADDRESS : STD_LOGIC_VECTOR(32-1 downto 0) := x"FFFFFFFF"
         );
@@ -288,7 +287,6 @@ begin
     -------------------------------------------------------------------------------
     APB_counter_inst00: component APB_counter 
         generic map (
-            G_DATA_WIDTH => 32,
             G_BASE_ADDRESS => x"81000000",
             G_HIGH_ADDRESS => x"8100FFFF")
         port map(

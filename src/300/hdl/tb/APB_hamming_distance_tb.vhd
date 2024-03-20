@@ -22,7 +22,7 @@ end entity APB_hamming_distance_tb;
 
 architecture Behavioural of APB_hamming_distance_tb is
 
-    component APB_counter is
+    component hd_block is
         generic (
             G_BASE_ADDRESS : STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0) := x"00000000";
             G_HIGH_ADDRESS : STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0) := x"FFFFFFFF"
@@ -185,7 +185,7 @@ begin
     -------------------------------------------------------------------------------
     -- DUT
     -------------------------------------------------------------------------------
-    APB_hamming_distance_inst00: component APB_hamming_distance
+    APB_hamming_distance_inst00: component hd_block
         generic map (
             G_BASE_ADDRESS => x"81100000",
             G_HIGH_ADDRESS => x"811000FF")
