@@ -19,7 +19,7 @@ void main(void) {
 	print_hex((unsigned int)(counter), 8);
 	print_chr('\n');
 
-	hamming_distance = get_hamming_distance(4, 6);
+	hamming_distance = get_hamming_distance(4294967295, 4294967294);
 	print_hex((unsigned int)(hamming_distance), 8);
 	print_chr('\n');
 }
