@@ -6,6 +6,6 @@
 #define HAMMING_DISTANCE_DRIVER_H
 
 uint32_t get_hamming_distance(uint32_t x, uint32_t y);
-unsigned int get_hamming_weight(unsigned int x);
+uint32_t get_hamming_weight(uint32_t x);
 #endif
   

@@ -2,7 +2,7 @@
 #include "hamming_distance.h"
 #include "counter.h"
 
-unsigned int get_hamming_weight(unsigned int x)
+uint32_t get_hamming_weight(uint32_t x)
 {
     unsigned int hamming_weight = 0;
     
@@ -19,7 +19,7 @@ unsigned int get_hamming_weight(unsigned int x)
     return hamming_weight;
 }
 
-unsigned int get_hamming_distance(unsigned int x, unsigned int y)
+uint32_t get_hamming_distance(uint32_t x, uint32_t y)
 {
     return get_hamming_weight(x ^ y);
 }
