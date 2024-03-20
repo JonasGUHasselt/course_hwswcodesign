@@ -81,7 +81,7 @@ architecture Behavioural of soc is
     signal mem_ready_i : STD_LOGIC;
     signal mem_rdata_i : STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
 
-        component hd_block is
+        component APB_dummy is
         generic (
             G_BASE_ADDRESS : STD_LOGIC_VECTOR(32-1 downto 0) := x"00000000";
             G_HIGH_ADDRESS : STD_LOGIC_VECTOR(32-1 downto 0) := x"FFFFFFFF"
@@ -159,7 +159,7 @@ begin
         PSLVERR => PSLVERR_COMP_2_i
     );
 
-    hd_block_inst00: component hd_block generic map(
+    APB_dummy_inst00: component APB_dummy generic map(
         G_BASE_ADDRESS => C_BASE_ADDRESS_3,
         G_HIGH_ADDRESS => C_HIGH_ADDRESS_3) 
     port map(
