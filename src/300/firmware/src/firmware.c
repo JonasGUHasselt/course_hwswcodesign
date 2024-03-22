@@ -28,8 +28,10 @@ void main(void) {
 
 	result = sine(15);
 	print_hex((unsigned int)(result), 8);
+	print_chr('\n');
 	result = sine(25);
 	print_hex((unsigned int)(result), 8);
+	print_chr('\n');
 	result = sine(275);
 	print_hex((unsigned int)(result), 8);
 	print_chr('\n');
