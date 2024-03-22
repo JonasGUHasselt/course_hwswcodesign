@@ -12,5 +12,7 @@
 #define ANGLE           (*(volatile unsigned int *) SINE_REG0_ADDRESS)
 #define SINE_OUT        (*(volatile unsigned int *) SINE_REG1_ADDRESS)
 
+uint32_t sine(uint32_t angle);
+
 #endif
   
