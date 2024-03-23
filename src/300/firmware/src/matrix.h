@@ -16,7 +16,7 @@
 #define MATRIX_B        (*(volatile unsigned int *) SINE_REG2_ADDRESS)
 #define RESULT_MATRIX   (*(volatile unsigned int *) SINE_REG3_ADDRESS)
 
-uint32_t multiply(uint32_t matrix_1, uint32_t matrix_2)
+uint32_t multiply(uint32_t matrix_1, uint32_t matrix_2);
 
 #endif
   
