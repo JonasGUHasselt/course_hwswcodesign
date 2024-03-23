@@ -1,7 +1,8 @@
 #include "print.h"
 #include "counter.h"
+#include "matrix.h" 
 //#include "hamming_distance.h"
-#include "sine.h"
+//#include "sine.h"
 
 
 void main(void) {
@@ -26,6 +27,7 @@ void main(void) {
 	print_chr('\n');
 */
 
+/*
 	result = sine(15);
 	print_hex((unsigned int)(result), 8);
 	print_chr('\n');
@@ -35,5 +37,11 @@ void main(void) {
 	result = sine(275);
 	print_hex((unsigned int)(result), 8);
 	print_chr('\n');
+*/
 
+uint32_t matrix_A = 16909060; //(1,2,3,4)
+uint32_t matrix_B = 16843009;// (1,1,1,1)
+result = multiply(matrix_A, matrix_B); //50530055
+print_hex((unsigned int) (result), 8); //0x03030707
+print_chr('\n');
 }
