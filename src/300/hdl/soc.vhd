@@ -81,6 +81,7 @@ architecture Behavioural of soc is
     signal mem_ready_i : STD_LOGIC;
     signal mem_rdata_i : STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
 
+
         component matrix_multiplication is
         generic (
             G_BASE_ADDRESS : STD_LOGIC_VECTOR(32-1 downto 0) := x"00000000";
@@ -177,7 +178,6 @@ begin
         PSLVERR => PSLVERR_COMP_3_i
     );
 
-    
     -------------------------------------------------------------------------------
     -- APB bus
     -------------------------------------------------------------------------------
