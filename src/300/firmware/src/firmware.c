@@ -45,7 +45,7 @@ result = multiply(matrix_A, matrix_B); //50530055
 print_hex((unsigned int) (result), 8); //0x03030707
 print_chr('\n');
 
-matrix_A = 16909060; //(4,3,2,1)
+matrix_A = 67305985; //(4,3,2,1)
 matrix_B = 16843009;// (1,1,1,1)
 result = multiply(matrix_A, matrix_B); 
 print_hex((unsigned int) (result), 8); //0x07070303
