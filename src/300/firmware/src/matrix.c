@@ -12,7 +12,7 @@ uint32_t multiply(uint32_t matrix_1, uint32_t matrix_2)
     temp += ((matrix_1 & 0x00ff0000) >> 16) * ((matrix_2 & 0x000000ff));
     result += temp << 16;
 
-    temp = ((matrix_1 & 0x00ff0000) >> 16) * ((matrix_2 & 0xff000000) >> 24);
+    temp = ((matrix_1 & 0x0000ff00) >> 8) * ((matrix_2 & 0xff000000) >> 24);
     temp += ((matrix_1 & 0x000000ff)) * ((matrix_2 & 0x0000ff00) >> 8);
     result += temp << 8;
 
