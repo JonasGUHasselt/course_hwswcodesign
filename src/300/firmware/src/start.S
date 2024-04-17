@@ -1,3 +1,5 @@
+#include "custom_ops.S"
+  
   .section .init
   .global main
   .global hard_div
