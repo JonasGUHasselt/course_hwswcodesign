@@ -4,7 +4,6 @@
 //#include "hamming_distance.h"
 //#include "sine.h"
 
-
 void main(void) {
 
 	uint32_t counter;

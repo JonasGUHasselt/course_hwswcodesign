@@ -112,7 +112,7 @@ begin
     APB_print_inst00: component APB_print generic map(
             G_BASE_ADDRESS => C_BASE_ADDRESS_1,
             G_HIGH_ADDRESS => C_HIGH_ADDRESS_1,
-            FNAME_OUT => "C:\Users\jonas\Documents\shallow_root_file\hwsw_co_design\Oefeningen\Week5_6\Oefening304\simulation_output.dat"
+            FNAME_OUT => "C:\Users\jonas\Documents\shallow_root_file\hwsw_co_design\Oefeningen\Week7_8\Oefening401\simulation_output.dat"
         ) port map (
             resetn => resetn_i,
             clock => clock_i,

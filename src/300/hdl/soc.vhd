@@ -81,27 +81,26 @@ architecture Behavioural of soc is
     signal mem_ready_i : STD_LOGIC;
     signal mem_rdata_i : STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
 
-
-        component matrix_multiplication is
-        generic (
-            G_BASE_ADDRESS : STD_LOGIC_VECTOR(32-1 downto 0) := x"00000000";
-            G_HIGH_ADDRESS : STD_LOGIC_VECTOR(32-1 downto 0) := x"FFFFFFFF"
-        );
-        port (
-            PCLK : IN STD_LOGIC;
-            PRESETn : IN STD_LOGIC;
-            PADDR : IN STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
-            PPROT : IN STD_LOGIC_VECTOR(C_PROT_WIDTH-1 downto 0);
-            PSELx : IN STD_LOGIC;
-            PENABLE : IN STD_LOGIC;
-            PWRITE : IN STD_LOGIC;
-            PWDATA : IN STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
-            PSTRB : IN STD_LOGIC_VECTOR(C_STRB_WIDTH-1 downto 0);
-            PREADY : OUT STD_LOGIC;
-            PRDATA : OUT STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
-            PSLVERR : OUT STD_LOGIC
-        );
-    end component;
+        --component matrix_multiplication is
+        --generic (
+         --   G_BASE_ADDRESS : STD_LOGIC_VECTOR(32-1 downto 0) := x"00000000";
+         --   G_HIGH_ADDRESS : STD_LOGIC_VECTOR(32-1 downto 0) := x"FFFFFFFF"
+       -- );
+       -- port (
+        --    PCLK : IN STD_LOGIC;
+        --    PRESETn : IN STD_LOGIC;
+         --   PADDR : IN STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
+         --   PPROT : IN STD_LOGIC_VECTOR(C_PROT_WIDTH-1 downto 0);
+         --   PSELx : IN STD_LOGIC;
+         --   PENABLE : IN STD_LOGIC;
+         --   PWRITE : IN STD_LOGIC;
+         --   PWDATA : IN STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
+         --   PSTRB : IN STD_LOGIC_VECTOR(C_STRB_WIDTH-1 downto 0);
+         --   PREADY : OUT STD_LOGIC;
+         --   PRDATA : OUT STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
+         --   PSLVERR : OUT STD_LOGIC
+       -- );
+    --end component;
 
 begin
 
@@ -160,23 +159,23 @@ begin
         PSLVERR => PSLVERR_COMP_2_i
     );
 
-    matrix_multiplication_inst00: component matrix_multiplication generic map(
-        G_BASE_ADDRESS => C_BASE_ADDRESS_3,
-        G_HIGH_ADDRESS => C_HIGH_ADDRESS_3) 
-    port map(
-        PCLK => PCLK_i,
-        PRESETn => PRESETn_i,
-        PADDR => PADDR_COMP_3_i,
-        PPROT => PPROT_COMP_3_i,
-        PSELx => PSELx_COMP_3_i,
-        PENABLE => PENABLE_COMP_3_i,
-        PWRITE => PWRITE_COMP_3_i,
-        PWDATA => PWDATA_COMP_3_i,
-        PSTRB => PSTRB_COMP_3_i,
-        PREADY => PREADY_COMP_3_i,
-        PRDATA => PRDATA_COMP_3_i,
-        PSLVERR => PSLVERR_COMP_3_i
-    );
+    --matrix_multiplication_inst00: component matrix_multiplication generic map(
+     --   G_BASE_ADDRESS => C_BASE_ADDRESS_3,
+     --   G_HIGH_ADDRESS => C_HIGH_ADDRESS_3) 
+    --port map(
+     --   PCLK => PCLK_i,
+     --   PRESETn => PRESETn_i,
+     --   PADDR => PADDR_COMP_3_i,
+     --   PPROT => PPROT_COMP_3_i,
+     --   PSELx => PSELx_COMP_3_i,
+     --   PENABLE => PENABLE_COMP_3_i,
+     --   PWRITE => PWRITE_COMP_3_i,
+     --   PWDATA => PWDATA_COMP_3_i,
+     --   PSTRB => PSTRB_COMP_3_i,
+      --  PREADY => PREADY_COMP_3_i,
+      --  PRDATA => PRDATA_COMP_3_i,
+       -- PSLVERR => PSLVERR_COMP_3_i
+   -- );
 
     -------------------------------------------------------------------------------
     -- APB bus
@@ -290,7 +289,7 @@ begin
             ENABLE_MUL => '1',
             ENABLE_FAST_MUL => '0',
             ENABLE_DIV => '0',
-            ENABLE_IRQ => '0',
+            ENABLE_IRQ => '1',
             ENABLE_IRQ_QREGS => '1',
             ENABLE_IRQ_TIMER => '1',
             ENABLE_TRACE => '0',
@@ -324,9 +323,9 @@ begin
             pcpi_rd => C_zeroes,
             pcpi_wait => C_zeroes(0),
             pcpi_ready => C_zeroes(0),
-            irq => C_zeroes,
+            irq => irq, -- C_zeroes,
             trap => open,
-            eoi => open,
+            eoi => eoi,--open,
             trace_valid => open,
             trace_data => open
         );
