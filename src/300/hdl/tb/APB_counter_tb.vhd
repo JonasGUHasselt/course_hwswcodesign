@@ -40,7 +40,10 @@ architecture Behavioural of APB_counter_tb is
             PSTRB : IN STD_LOGIC_VECTOR(G_DATA_WIDTH/8-1 downto 0);
             PREADY : OUT STD_LOGIC;
             PRDATA : OUT STD_LOGIC_VECTOR(G_DATA_WIDTH-1 downto 0);
-            PSLVERR : OUT STD_LOGIC
+            PSLVERR : OUT STD_LOGIC;
+            
+            irq : OUT STD_LOGIC;
+            eoi : IN STD_LOGIC
         );
     end component;
 

@@ -14,7 +14,7 @@ void main(void) {
 
 	counter_clear();
 	counter_start();
-	counter_stop();
+	//counter_stop();
 
 	counter = counter_get_value();
 	print_hex((unsigned int)(counter), 8);
@@ -37,7 +37,7 @@ void main(void) {
 	print_hex((unsigned int)(result), 8);
 	print_chr('\n');
 */
-
+/*
 uint32_t matrix_A = 16909060; //(1,2,3,4)
 uint32_t matrix_B = 16843009;// (1,1,1,1)
 result = multiply(matrix_A, matrix_B); //50530055
@@ -49,5 +49,5 @@ matrix_B = 16843009;// (1,1,1,1)
 result = multiply(matrix_A, matrix_B); 
 print_hex((unsigned int) (result), 8); //0x07070303
 print_chr('\n');
-
+*/
 }

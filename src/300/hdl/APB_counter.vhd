@@ -38,7 +38,10 @@ entity APB_counter is
 
         PREADY : OUT STD_LOGIC;
         PRDATA : OUT STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
-        PSLVERR : OUT STD_LOGIC
+        PSLVERR : OUT STD_LOGIC;
+        
+        irq : OUT STD_LOGIC;
+        eoi : IN STD_LOGIC
     );
 end entity APB_counter;
 
@@ -61,6 +64,9 @@ architecture Behavioural of APB_counter is
     signal PREADY_i : STD_LOGIC;
     signal PRDATA_i : STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
     signal PSLVERR_i : STD_LOGIC;
+    
+    signal irq_i : STD_LOGIC;
+    signal eoi_i : STD_LOGIC;
 
     signal within_addressrange : STD_LOGIC;
     signal load_reg_write, load_reg_read : STD_LOGIC;
@@ -72,7 +78,6 @@ architecture Behavioural of APB_counter is
     signal counter, counter_inc : STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
     signal counter_clear : STD_LOGIC;
     signal counter_ce : STD_LOGIC;
-
 
     alias CR : STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0) is registers(0);
     signal SR : STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
@@ -94,8 +99,9 @@ begin
     PREADY <= PREADY_i;
     PRDATA <= PRDATA_i;
     PSLVERR <= PSLVERR_i;
-
-
+    irq <= irq_i;
+    eoi_i <= eoi;
+    
     -------------------------------------------------------------------------------
     -- COMBINATORIAL
     -------------------------------------------------------------------------------
@@ -183,6 +189,12 @@ begin
                 counter <= (others => '0');
             elsif counter_ce = '1' then 
                 counter <= counter_inc;
+            end if;
+            
+            if counter = x"5F5E100" then
+                irq_i <= '1';
+            else
+                irq_i <= '0';
             end if;
         end if;
     end process;
