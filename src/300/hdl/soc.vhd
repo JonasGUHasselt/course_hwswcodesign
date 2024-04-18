@@ -81,7 +81,7 @@ architecture Behavioural of soc is
     signal mem_ready_i : STD_LOGIC;
     signal mem_rdata_i : STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
 
-    signal irq : STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
+    signal irq : STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0) := (others => '0');
     signal eoi : STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
         --component matrix_multiplication is
         --generic (

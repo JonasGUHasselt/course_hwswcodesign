@@ -192,7 +192,7 @@ begin
                 counter <= counter_inc;
             end if;
             
-            if counter = x"00000010" then
+            if counter = x"05F5E100" then
                 irq_i <= '1';
             else
                 irq_i <= '0';
