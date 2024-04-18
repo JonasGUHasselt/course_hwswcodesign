@@ -1,24 +1,25 @@
 #include "print.h"
 #include "counter.h"
-#include "matrix.h" 
+//#include "matrix.h" 
 //#include "hamming_distance.h"
 //#include "sine.h"
 
 void main(void) {
 
-	uint32_t counter;
+	//uint32_t counter;
 	//uint32_t hamming_distance;
+	/*
 	uint32_t result;
 	print_str("hello world");
-	print_chr('\n');
-
+	print_chr('\n');*/
 	counter_clear();
 	counter_start();
+	while(1){}
 	//counter_stop();
-
+/*
 	counter = counter_get_value();
 	print_hex((unsigned int)(counter), 8);
-	print_chr('\n');
+	print_chr('\n');*/
 
 /*
 	hamming_distance = get_hamming_distance(4294967295, 4294967294);
