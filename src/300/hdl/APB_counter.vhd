@@ -99,6 +99,7 @@ begin
     PREADY <= PREADY_i;
     PRDATA <= PRDATA_i;
     PSLVERR <= PSLVERR_i;
+    
     irq <= irq_i;
     eoi_i <= eoi;
     
@@ -179,7 +180,7 @@ begin
     -- BLOCK FUNCTIONALITY
     -------------------------------------------------------------------------------
     counter_inc <= std_logic_vector(to_unsigned(to_integer(unsigned(counter)) + 1, counter_inc'length));
-
+    
     PCTR: process(PRESETn_i, PCLK_i)
     begin
         if PRESETn_i = '0' then 
@@ -191,13 +192,11 @@ begin
                 counter <= counter_inc;
             end if;
             
-            if counter = x"5F5E100" then
+            if counter = x"00000010" then
                 irq_i <= '1';
             else
                 irq_i <= '0';
             end if;
         end if;
     end process;
-
-
 end Behavioural;

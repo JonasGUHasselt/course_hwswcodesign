@@ -6,9 +6,11 @@
 // means.
 
 #include "firmware.h"
-
+#include "counter.h"
 uint32_t *irq(uint32_t *regs, uint32_t irqs)
 {
+	counter_clear();
+	/*
 	static unsigned int ext_irq_4_count = 0;
 	static unsigned int ext_irq_5_count = 0;
 	static unsigned int timer_irq_count = 0;
@@ -135,6 +137,6 @@ uint32_t *irq(uint32_t *regs, uint32_t irqs)
 		__asm__ volatile ("ebreak");
 	}
 
-	return regs;
+	return regs;*/
 }
 
