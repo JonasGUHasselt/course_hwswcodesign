@@ -192,7 +192,7 @@ begin
                 counter <= counter_inc;
             end if;
             
-            if counter = x"05F5E100" then
+            if counter = x"05F5E100" then --count to 100_000_000 (1 second)
                 irq_i <= '1';
             else
                 irq_i <= '0';
