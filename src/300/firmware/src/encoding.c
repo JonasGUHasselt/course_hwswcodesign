@@ -41,8 +41,10 @@ void construct_body(void)
         pixel_handled = false;
         unsigned int pixel = IMAGE_PIXEL_VALUE + i;
         print_chr('\n');
+        print_chr('\n')
         print_hex(pixel, 8);
         print_chr('\n');
+        print_chr('\n')
         
         if (is_previous_pixel(pixel))
         {
