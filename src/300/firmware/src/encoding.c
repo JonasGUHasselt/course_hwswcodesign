@@ -36,12 +36,13 @@ void construct_body(void)
 {
     bool pixel_handled = false;
     int number_of_pixels = IMAGE_WIDTH * IMAGE_HEIGHT;
-    for (int i=0; i < number_of_pixels*4 ; i+=8)
+    for (int i=0; i < number_of_pixels*4 ; i+=4)
     {
         pixel_handled = false;
         print_chr('i');
         print_hex(i,8);
-        unsigned int pixel = *(IMAGE_PIXEL_VALUE + i);
+        unsigned int pixel = *((volatile unsigned int *) IMAGE_REG2_ADDRESS + i);
+        // unsigned int pixel = *(IMAGE_PIXEL_VALUE + i);
         print_chr('\n');
         print_chr('\n');
         print_chr('p');
