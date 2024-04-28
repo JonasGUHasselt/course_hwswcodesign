@@ -45,8 +45,6 @@ void construct_body(void)
         // unsigned int pixel = *(IMAGE_PIXEL_VALUE + i);
         print_chr('\n');
         print_chr('\n');
-        print_chr('k');
-        print_hex(*((volatile unsigned int *) IMAGE_REG2_ADDRESS + i - 4), 8);
         print_chr('p');
         print_hex(pixel, 8);
         print_chr('l');
