@@ -11,7 +11,7 @@
 # set parameters
 set pname "hwswcodesign_400"
 set srcpath "C:/Users/jonas/Documents/shallow_root_file/hwsw_co_design/forked_repo/src/project/hdl"
-set projpath "C:\Users\jonas\Documents\shallow_root_file\hwsw_co_design\Project\Software"
+set projpath "C:/Users/jonas/Documents/shallow_root_file/hwsw_co_design/Project/Software"
 set part "xc7z020clg400-1"
 set board "tul.com.tw:pynq-z2:part0:1.0"
 
