@@ -40,7 +40,7 @@ void construct_body(void)
     {
         pixel_handled = false;
         print_chr('i');
-        print_dec(i);
+        print_hex(i,8);
         unsigned int pixel = *(IMAGE_PIXEL_VALUE + i);
         print_chr('\n');
         print_chr('\n');
