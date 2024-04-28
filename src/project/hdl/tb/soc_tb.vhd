@@ -100,7 +100,7 @@ begin
         generic map (
             G_BASE_ADDRESS => C_BASE_ADDRESS_0,
             G_HIGH_ADDRESS => C_HIGH_ADDRESS_0,
-            FNAME_HEX => "/home/jvliegen/vc/github/KULeuven-Diepenbeek/course_hwswcodesign_internal/project/firmware/v1_0_0/firmware.hex"
+            FNAME_HEX => "C:\Users\jonas\Documents\shallow_root_file\hwsw_co_design\forked_repo\src\300\firmware\firmware.hex_example"
         ) port map (
             resetn => resetn_i,
             clock => clock_i,
@@ -122,7 +122,7 @@ begin
     APB_print_model_inst00: component APB_print_model generic map(
             G_BASE_ADDRESS => C_BASE_ADDRESS_1,
             G_HIGH_ADDRESS => C_HIGH_ADDRESS_1,
-            FNAME_OUT => "/home/jvliegen/vc/github/KULeuven-Diepenbeek/course_hwswcodesign_internal/project/firmware/v1_0_0/simulation_output.dat"
+            FNAME_OUT => "C:\Users\jonas\Documents\shallow_root_file\hwsw_co_design\Project\Software\simulation_output.dat"
         ) port map (
             resetn => resetn_i,
             clock => clock_i,
@@ -144,7 +144,7 @@ begin
     APB_sensor_model_inst00: component APB_sensor_model generic map(
             G_BASE_ADDRESS => C_BASE_ADDRESS_3,
             G_HIGH_ADDRESS => C_HIGH_ADDRESS_3,
-            FNAME_DATA => "/home/jvliegen/vc/github/KULeuven-Diepenbeek/course_hwswcodesign_internal/project/data/sensorreading.dat"
+            FNAME_DATA => "C:\Users\jonas\Documents\shallow_root_file\hwsw_co_design\forked_repo\src\project\data\sensorreading.dat"
         ) port map (
             resetn => resetn_i,
             clock => clock_i,
