@@ -36,7 +36,7 @@ void construct_body(void)
 {
     bool pixel_handled = false;
     int number_of_pixels = IMAGE_WIDTH * IMAGE_HEIGHT;
-    print_chr('\n');
+    // print_chr('\n');
     print_dec(IMAGE_WIDTH);
     // print_chr('\n');
     // print_dec(IMAGE_HEIGHT);
