@@ -40,7 +40,7 @@ void construct_body(void)
     print_dec(IMAGE_WIDTH);
     print_chr('\n');
     print_dec(IMAGE_HEIGHT);
-    print_str('number:');
+    print_chr('\n');
     print_dec(number_of_pixels);
     print_chr('\n');
     for (int i=0; i < number_of_pixels*4 ; i+=4)
@@ -48,7 +48,6 @@ void construct_body(void)
         pixel_handled = false;
         unsigned int pixel = IMAGE_PIXEL_VALUE + i;
         print_chr('\n');
-        print_str('pixel:');
         print_hex(pixel, 16);
         print_chr('\n');
         
