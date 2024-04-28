@@ -39,6 +39,8 @@ void construct_body(void)
     for (int i=0; i < number_of_pixels*4 ; i+=4)
     {
         pixel_handled = false;
+        print_chr('i');
+        print_dec(i);
         unsigned int pixel = *(IMAGE_PIXEL_VALUE + i);
         print_chr('\n');
         print_chr('\n');
