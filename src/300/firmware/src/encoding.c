@@ -36,19 +36,12 @@ void construct_body(void)
 {
     bool pixel_handled = false;
     int number_of_pixels = IMAGE_WIDTH * IMAGE_HEIGHT;
-    print_chr('\n');
-    print_hex(IMAGE_WIDTH, 8);
-    print_chr('\n');
-    print_hex(IMAGE_HEIGHT, 8);
-    print_chr('\n');
-    print_hex(number_of_pixels, 9);
-    print_chr('\n');
     for (int i=0; i < number_of_pixels*4 ; i+=4)
     {
         pixel_handled = false;
         unsigned int pixel = IMAGE_PIXEL_VALUE + i;
         print_chr('\n');
-        print_hex(pixel, 16);
+        print_hex(pixel, 8);
         print_chr('\n');
         
         if (is_previous_pixel(pixel))
