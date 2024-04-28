@@ -12,7 +12,7 @@
 
 #define IMAGE_WIDTH             (*(volatile unsigned int *) IMAGE_REG0_ADDRESS)
 #define IMAGE_HEIGHT            (*(volatile unsigned int *) IMAGE_REG1_ADDRESS)
-#define IMAGE_PIXEL_VALUE      (*(volatile unsigned int *) IMAGE_REG2_ADDRESS)
+#define IMAGE_PIXEL_VALUE      ((volatile unsigned int *) IMAGE_REG2_ADDRESS)
 
 void encode_image(void);
 void construct_header(void);
