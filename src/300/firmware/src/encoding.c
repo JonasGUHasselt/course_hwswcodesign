@@ -196,8 +196,8 @@ bool can_calculate_difference(unsigned int pixel)
         print_chr('\n');
         
         print_chr('\n');
-        if (value != (signed)0xFF) {print_chr('T');} else {print_chr('F');}
-        if (value !=(signed)0x00) {print_chr('t');} else {print_chr('f');}
+        if (value != (signed char)0xFF) {print_chr('T');} else {print_chr('F');}
+        if (value !=(signed char)0x00) {print_chr('t');} else {print_chr('f');}
         if (value != 0xFF && value !=0x00){return false;}
         
         return true;
