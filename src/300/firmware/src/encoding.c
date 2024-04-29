@@ -159,13 +159,20 @@ unsigned char get_pixel_hash(unsigned char *pixel)
     unsigned char green_value = pixel[1];
     unsigned char blue_value = pixel[2];
     unsigned char alpha_value = pixel[3];
-    
+    print_chr('\n');
+    print_hex(red_value, 2);
+    print_hex(green_value, 2);
+    print_hex(blue_value, 2);
+    print_hex(alpha_value, 2);
+    print_chr('\n');
     unsigned char hash = (
                             red_value * 3 
                             + green_value * 5 
                             + blue_value * 7 
                             + alpha_value * 11
                             ) % 64;
+    print_hex(hash, 2);
+    print_chr('\n');
     return hash;
 }
 
