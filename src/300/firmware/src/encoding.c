@@ -39,17 +39,15 @@ void construct_body(void)
     for (int i=0; i < number_of_pixels*4 ; i+=4)
     {
         pixel_handled = false;
-        print_chr('i');
-        print_hex(i,8);
+        // print_chr('i');
+        // print_hex(i,8);
         unsigned int pixel = *((volatile unsigned int *) (IMAGE_REG2_ADDRESS + i));
         // unsigned int pixel = *(IMAGE_PIXEL_VALUE + i);
-        print_chr('\n');
         print_chr('\n');
         print_chr('p');
         print_hex(pixel, 8);
         // print_chr('l');
         // print_hex(*((volatile unsigned int *) IMAGE_REG2_ADDRESS + i + 4), 8);
-        print_chr('\n');
         print_chr('\n');
         
         if (is_previous_pixel(pixel))
