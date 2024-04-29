@@ -222,7 +222,14 @@ unsigned int calculate_difference(unsigned int pixel)
 void save_difference_encoding(unsigned int difference)
 {
     unsigned char difference_chunk = 0b01 << 2;
-
+    print_chr('\n');
+    print_chr('\n');
+    print_hex(difference, 8);
+    print_chr('\n');
+    print_chr('\n');
+    print_hex(difference >> 4 + 2, 8);
+    print_chr('\n');
+    print_chr('\n');
     difference_chunk += (difference >> 4) + 2;
     difference_chunk <<= 2;
     difference_chunk += ((difference >> 2) & 0xFF) + 2;
