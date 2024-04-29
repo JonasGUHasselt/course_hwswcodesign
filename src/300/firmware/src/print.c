@@ -26,8 +26,8 @@ void print_dec(unsigned int val)
 	while (val || p == buffer) {
 		print_chr('c');
 
-		*(p) = (unsigned char)(val % 10);
-		p+=1;
+		*p = (unsigned char)(val % 10);
+		// p+=1;
 		print_chr('l');
 		val = val / 10;
 		print_chr('a');
