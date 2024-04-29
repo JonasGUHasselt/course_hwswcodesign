@@ -46,9 +46,20 @@ void construct_body(void)
         print_chr('\n');
         print_chr('\n');
         print_chr('p');
-        print_hex(pixel, 8);
-        print_chr('l');
-        print_hex(*((volatile unsigned int *) IMAGE_REG2_ADDRESS + i + 4), 8);
+        print_chr('1');
+        print_hex(IMAGE_PIXEL_VALUE1,8);
+        print_chr('\n');
+        print_chr('2');
+        print_hex(IMAGE_PIXEL_VALUE2,8);
+        print_chr('\n');
+        print_chr('3');
+        print_hex(IMAGE_PIXEL_VALUE3,8);
+        print_chr('\n');
+        print_chr('4');
+        print_hex(IMAGE_PIXEL_VALUE4,8);
+        // print_hex(pixel, 8);
+        // print_chr('l');
+        // print_hex(*((volatile unsigned int *) IMAGE_REG2_ADDRESS + i + 4), 8);
         print_chr('\n');
         print_chr('\n');
         
