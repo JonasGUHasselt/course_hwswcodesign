@@ -139,15 +139,7 @@ void reset_run_length_encoding(void)
 
 bool is_present_in_running_array(unsigned int pixel)
 {
-    print_chr('\n');
-    print_chr('k');
-    print_hex(pixel, 2);
-    print_chr('\n');
-
     unsigned char index = get_index(pixel);
-    print_chr('\n');
-    print_hex(index, 2);
-    print_chr('\n');
     if (index != 0 && running_array[index] == 0)
     {
         return false;
@@ -162,15 +154,7 @@ unsigned char get_pixel_hash(unsigned char *pixel)
     unsigned char green_value = pixel[1];
     unsigned char blue_value = pixel[2];
     unsigned char alpha_value = pixel[3];
-    print_chr('\n');
-    print_hex(red_value, 2);
-    print_chr('\n');
-    print_hex(green_value, 2);
-    print_chr('\n');
-    print_hex(blue_value, 2);
-    print_chr('\n');
-    print_hex(alpha_value, 2);
-    print_chr('\n');
+
     unsigned char hash = (
                             red_value * 3 
                             + green_value * 5 
