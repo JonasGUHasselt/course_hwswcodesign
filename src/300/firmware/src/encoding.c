@@ -194,7 +194,7 @@ bool can_calculate_difference(unsigned int pixel)
     {
         signed char value = (pixel >> i) & 0xFF;
         print_chr('\n');
-        print_hex(value, 4);
+        print_dec(value);
         print_chr('\n');
         if (value != 0xFF) {print_chr('T');} else {print_chr('F');}
         if (value !=0x00) {print_chr('t');} else {print_chr('f');}
