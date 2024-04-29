@@ -71,7 +71,7 @@ void construct_body(void)
         if(can_calculate_difference(pixel))
         {
             print_chr('d');
-            unsigned int difference = calculate_difference(pixel);
+            int difference = calculate_difference(pixel);
             save_difference_encoding(difference);
         } else {
             print_chr('r');
@@ -203,7 +203,7 @@ bool can_calculate_difference(unsigned int pixel)
 unsigned int calculate_difference(unsigned int pixel)
 {
     unsigned char current_pixel[4];
-    unsigned int difference;
+    int difference;
 
     get_rgb_values(pixel, current_pixel);
 
@@ -236,7 +236,7 @@ unsigned int calculate_difference(unsigned int pixel)
     return difference;
 }
 
-void save_difference_encoding(unsigned int difference)
+void save_difference_encoding(int difference)
 {
     unsigned char difference_chunk = 0b01 << 2;
     print_chr('\n');
