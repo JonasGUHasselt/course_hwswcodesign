@@ -193,8 +193,10 @@ bool can_calculate_difference(unsigned int pixel)
     for (char i = 0; (pixel >> i) > 0; i+=2)
     {
         signed char value = (pixel >> i) & 0xFF;
+
+        unsigned int v = (unsigned int) value;
         print_chr('\n');
-        print_dec(value);
+        print_dec(v);
         print_chr('\n');
         if (value != 0xFF) {print_chr('T');} else {print_chr('F');}
         if (value !=0x00) {print_chr('t');} else {print_chr('f');}
