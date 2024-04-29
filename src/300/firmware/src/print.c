@@ -23,7 +23,8 @@ void print_dec(unsigned int val)
 {
 	char buffer[10];
 	char *p = buffer;
-	while (val) {// || p == buffer) {
+	// while (val || p == buffer) {
+	while (p == buffer) {
 		print_chr('c');
 		*(p++) = (unsigned char )(val % 10);
 		print_chr('l');
