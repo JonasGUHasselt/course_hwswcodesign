@@ -50,7 +50,11 @@ void construct_body(void)
         {
             increase_run_length_encoding();
             pixel_handled = true;
+            print_chr('\n');
+            print_chr('t');
         } else {
+            print_chr('\n');
+            print_chr('e');
             save_run_length_encoding();
             reset_run_length_encoding();
         }
