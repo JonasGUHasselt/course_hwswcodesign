@@ -83,7 +83,8 @@ void construct_body(void)
         reset_run_length_encoding();
     }
     print_chr('\n');
-    print_hex(0x01, 16);
+    print_hex(0x0, 8);
+    print_hex(0x01, 8);
     print_chr('\n');
 }
 
