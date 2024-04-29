@@ -185,9 +185,6 @@ void save_running_array_encoding(unsigned int pixel)
 void add_pixel_to_running_array(unsigned int pixel)
 {
     unsigned char index = get_index(pixel);
-    print_chr('\n');
-    print_hex(index, 2);
-    print_chr('\n');
     running_array[index] = pixel;
 }
 
