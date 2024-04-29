@@ -27,7 +27,7 @@ void print_dec(unsigned int val)
 		print_chr('c');
 
 		*p = (unsigned char)(val % 10);
-		// p+=1;
+		p = p + 1;
 		print_chr('l');
 		val = val / 10;
 		print_chr('a');
