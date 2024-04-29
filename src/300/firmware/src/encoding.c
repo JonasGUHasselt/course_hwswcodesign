@@ -211,7 +211,7 @@ unsigned int calculate_difference(unsigned int pixel)
     unsigned char green_value = current_pixel[1];
     unsigned char blue_value = current_pixel[2];
 
-    difference += (unsigned char)(((char) red_value) - ((char) previous_pixel[0]));
+    difference += (unsigned char)(red_value - previous_pixel[0]);
     print_chr('\n');
     print_chr('\n');
     print_chr('r');
@@ -219,7 +219,7 @@ unsigned int calculate_difference(unsigned int pixel)
     print_chr('\n');
     difference <<= 8;
     print_hex(difference, 8);
-    difference += (green_value - previous_pixel[1]);
+    difference += (unsigned char)(green_value - previous_pixel[1]);
     print_chr('\n');
     print_chr('g');
     print_hex(difference, 8);
@@ -227,7 +227,7 @@ unsigned int calculate_difference(unsigned int pixel)
     difference <<= 8;
     print_hex(difference, 8);
     print_chr('\n');
-    difference += (unsigned char) (((char)blue_value) - ((char) previous_pixel[2]));
+    difference += (unsigned char)(blue_value - previous_pixel[2]);
     print_chr('\n');
     print_chr('b');
     print_hex(difference, 8);
