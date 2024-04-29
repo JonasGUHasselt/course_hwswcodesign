@@ -208,9 +208,9 @@ bool can_calculate_difference(unsigned int pixel)
         char value = (pixel >> i) & 0xFF;
         print_chr('\n');
         // print_hex(pixel >> 32, 8);
-        // print_chr('i');
-        // print_hex(i, 2);
-        // print_chr('\n');
+        print_chr('i');
+        print_hex(i, 2);
+        print_chr('\n');
         // // print_hex(pixel >> 8, 8);
         // print_hex(value, 2);
         // print_chr('\n');
