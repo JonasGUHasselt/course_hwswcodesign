@@ -39,13 +39,11 @@ void construct_body(void)
     for (int i=0; i < number_of_pixels ; i++)
     {
         pixel_handled = false;
-        // unsigned int pixel = *((volatile unsigned int *) (IMAGE_REG2_ADDRESS + i));
         unsigned int pixel = IMAGE_PIXEL_VALUE(i);
         print_chr('\n');
         print_chr('p');
         print_hex(pixel, 8);
-        // print_chr('l');
-        // print_hex(*((volatile unsigned int *) IMAGE_REG2_ADDRESS + i + 4), 8);
+        print_chr('\n');
         print_chr('\n');
         
         if (is_previous_pixel(pixel))
@@ -58,7 +56,7 @@ void construct_body(void)
         }
 
         if (pixel_handled) {continue;}
-
+        print_chr('y');
         if (is_present_in_running_array(pixel))
         {
             save_running_array_encoding(pixel);
@@ -68,7 +66,7 @@ void construct_body(void)
         }
 
         if(pixel_handled) {continue;}
-
+        print_chr('e');
         if(can_calculate_difference(pixel))
         {
             unsigned int difference = calculate_difference(pixel);
@@ -78,6 +76,7 @@ void construct_body(void)
         }
 
         set_pixel_as_previous_pixel(pixel);
+        print_chr('s');
     }
 
     if (run_length_encoding != -1)
