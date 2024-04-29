@@ -193,7 +193,7 @@ bool can_calculate_difference(unsigned int pixel)
     for (char i = 0; (pixel >> i) > 0; i+=2)
     {
         signed char value = (pixel >> i) & 0xFF;
-
+        print_hex(value, 2);
         if (value != 0xFF && value !=0x00){return false;}
         
         return true;
