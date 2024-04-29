@@ -22,7 +22,7 @@ bool is_previous_pixel(unsigned int pixel);
 void increase_run_length_encoding(void);
 void save_run_length_encoding(void);
 void reset_run_length_encoding(void);
-bool is_present_in_running_array(unsigned char pixel);
+bool is_present_in_running_array(unsigned int pixel);
 unsigned char get_pixel_hash(unsigned char *pixel);
 unsigned char get_index(unsigned int pixel);
 void save_running_array_encoding(unsigned int pixel);
