@@ -180,7 +180,17 @@ unsigned char get_index(unsigned int pixel)
 {
     unsigned char rgb_pixel[4]; 
     get_rgb_values(pixel, rgb_pixel);
-
+    print_chr('\n');
+    print_chr('\n');
+    print_hex(rgb_pixel[0], 2);
+    print_chr('\n');
+    print_hex(rgb_pixel[1], 2);
+    print_chr('\n');
+    print_hex(rgb_pixel[2], 2);
+    print_chr('\n');
+    print_hex(rgb_pixel[3], 2);
+    print_chr('\n');
+    print_chr('\n');
     return get_pixel_hash(rgb_pixel); 
 }
 
