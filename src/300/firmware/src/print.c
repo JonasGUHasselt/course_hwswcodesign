@@ -21,19 +21,14 @@ void print_str(const char *p)
 
 void print_dec(unsigned int val)
 {
-	char buffer[100];
+	char buffer[10];
 	char *p = buffer;
-	while (val || p == buffer) {
-		print_chr('c');
 
-		*(p++) = (unsigned char)(val % 10);
-		print_chr('l');
+	while (val || p == buffer) {
+		*(p++) = (unsigned char )(val % 10);
 		val = val / 10;
-		print_chr('a');
 	}
-	print_chr('i');
 	while (p != buffer) {
-		print_chr('n');
 		*((volatile uint32_t*)OUTPORT) = '0' + *(--p);
 	}
 }
