@@ -21,7 +21,7 @@ void print_str(const char *p)
 
 void print_dec(unsigned int val)
 {
-	char buffer[10];
+	int buffer[10];
 	int *p = buffer;
 	while (val || p == buffer) {
 		print_chr('c');
