@@ -82,8 +82,9 @@ void construct_body(void)
         save_run_length_encoding();
         reset_run_length_encoding();
     }
-
+    print_chr('\n');
     print_hex(0x0000000000000001, 16);
+    print_chr('\n');
 }
 
 void get_rgb_values(unsigned int pixel, unsigned char *rgb)
