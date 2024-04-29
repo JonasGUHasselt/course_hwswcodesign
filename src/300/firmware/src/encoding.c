@@ -205,7 +205,8 @@ bool can_calculate_difference(unsigned int pixel)
         // print_chr('\n');
         // print_chr('\n');
         if (value != (char)0xFF && value !=(char)0x00){return false;}
-    }   
+    }
+    print_chr('n');
     
     return true;
 }
