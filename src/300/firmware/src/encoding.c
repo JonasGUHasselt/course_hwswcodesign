@@ -211,6 +211,7 @@ int calculate_difference(unsigned int pixel)
     char green_value = current_pixel[1];
     char blue_value = current_pixel[2];
 
+    print_hex((char) (red_value - ((char) previous_pixel[1])), 8);
     difference += (red_value - ((char) previous_pixel[0]));
     print_chr('\n');
     print_chr('\n');
