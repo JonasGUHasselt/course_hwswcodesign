@@ -186,6 +186,9 @@ void add_pixel_to_running_array(unsigned int pixel)
 {
     unsigned char index = get_index(pixel);
     running_array[index] = pixel;
+    print_chr('\n');
+    print_hex(index,2);
+    print_chr('\n');
 }
 
 bool can_calculate_difference(unsigned int pixel)
