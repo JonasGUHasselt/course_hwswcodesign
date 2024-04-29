@@ -56,7 +56,6 @@ void construct_body(void)
         }
 
         if (pixel_handled) {continue;}
-        print_chr('y');
         if (is_present_in_running_array(pixel))
         {
             save_running_array_encoding(pixel);
@@ -67,19 +66,15 @@ void construct_body(void)
         }
 
         if(pixel_handled) {continue;}
-        print_chr('e');
         if(can_calculate_difference(pixel))
         {
-            print_chr('d');
             unsigned int difference = calculate_difference(pixel);
             save_difference_encoding(difference);
         } else {
-            print_chr('r');
             save_rgb_encoding(pixel);
         }
 
         set_pixel_as_previous_pixel(pixel);
-        print_chr('s');
     }
 
     if (run_length_encoding != -1)
