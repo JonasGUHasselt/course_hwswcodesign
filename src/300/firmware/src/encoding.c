@@ -213,7 +213,7 @@ int calculate_difference(unsigned int pixel)
 
     difference += red_value - ((char) previous_pixel[0]);
     print_chr('\n');
-    make_hex((char) previous_pixel[1], 2);
+    print_hex((char) previous_pixel[1], 2);
     print_chr('\n');
     print_chr('r');
     print_hex(difference, 8);
