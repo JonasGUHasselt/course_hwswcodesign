@@ -215,9 +215,9 @@ bool can_calculate_difference(unsigned int pixel)
         // print_hex(value, 2);
         // print_chr('\n');
         // print_chr('\n');
-        if (value != (char)0xFF && value !=(char)0x00){return false;}
+        if (value != (char)0xFF && value !=(char)0x00){print_chr('f');return false;}
     }
-    print_chr('n');
+    print_chr('t');
     
     return true;
 }
