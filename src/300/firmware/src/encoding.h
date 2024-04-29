@@ -29,7 +29,7 @@ void save_running_array_encoding(unsigned int pixel);
 void add_pixel_to_running_array(unsigned int pixel);
 bool can_calculate_difference(unsigned int pixel);
 int calculate_difference(unsigned int pixel);
-void save_difference_encoding(unsigned int difference);
+void save_difference_encoding(int difference);
 void save_rgb_encoding(unsigned int pixel);
 void set_pixel_as_previous_pixel(unsigned int pixel);
 
