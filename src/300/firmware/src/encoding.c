@@ -211,9 +211,9 @@ unsigned int calculate_difference(unsigned int pixel)
     unsigned char blue_value = current_pixel[2];
 
     difference += red_value - previous_pixel[0];
-    difference <<= 2;
+    difference <<= 8;
     difference += green_value - previous_pixel[1];
-    difference <<= 2;
+    difference <<= 8;
     difference += blue_value - previous_pixel[2];
 
     return difference;
@@ -221,24 +221,23 @@ unsigned int calculate_difference(unsigned int pixel)
 
 void save_difference_encoding(unsigned int difference)
 {
-    //diff = 00000FF0
     print_chr('\n');
     print_hex(difference, 8);
     unsigned char difference_chunk = 0b01 << 2;
     print_chr('\n');
     print_chr('\n');
-    print_hex(((signed char)((difference >> 4) & 0xFF)) + 2, 8);
+    print_hex(((signed char)((difference >> 16) & 0xFF)) + 2, 8);
     print_chr('\n');
-    print_hex((((difference >> 2) & 0xFF)) + 2, 8);
+    print_hex((((difference >> 8) & 0xFF)) + 2, 8);
     print_chr('\n');
     print_hex(((signed char) (difference & 0xFF)) + 2, 8);
     print_chr('\n');
     print_chr('\n');
     
-    difference_chunk += ((signed char)((difference >> 4) & 0xFF)) + 2;
+    difference_chunk += ((signed char)((difference >> 16) & 0xFF)) + 2;
     difference_chunk <<= 2;
     print_hex(difference_chunk, 2);
-    difference_chunk += ((signed char)((difference >> 2) & 0xFF)) + 2;
+    difference_chunk += ((signed char)((difference >> 8) & 0xFF)) + 2;
     difference_chunk <<= 2;
     print_chr('\n');
     print_hex(difference_chunk, 2);
