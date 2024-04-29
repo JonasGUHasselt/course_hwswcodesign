@@ -92,23 +92,10 @@ void construct_body(void)
 
 void get_rgb_values(unsigned int pixel, unsigned char *rgb)
 {
-    print_chr('\n');
-    print_hex(pixel, 8);
-    print_chr('\n');
-    print_hex(pixel >> 24, 8);
-    print_chr('\n');
     rgb[0] =  pixel >> 24 & 0xFF;
     rgb[1] = (pixel >> 16) & 0xFF;
     rgb[2] = (pixel >> 8) & 0xFF;
     rgb[3] = pixel & 0xFF;
-    print_hex(rgb[0], 2);
-    print_chr('\n');
-    print_hex(rgb[1], 2);
-    print_chr('\n');
-    print_hex(rgb[2], 2);
-    print_chr('\n');
-    print_hex(rgb[3], 2);
-    print_chr('\n');
 }
 
 bool is_previous_pixel(unsigned int pixel)
@@ -174,8 +161,11 @@ unsigned char get_pixel_hash(unsigned char *pixel)
     unsigned char alpha_value = pixel[3];
     print_chr('\n');
     print_hex(red_value, 2);
+    print_chr('\n');
     print_hex(green_value, 2);
+    print_chr('\n');
     print_hex(blue_value, 2);
+    print_chr('\n');
     print_hex(alpha_value, 2);
     print_chr('\n');
     unsigned char hash = (
