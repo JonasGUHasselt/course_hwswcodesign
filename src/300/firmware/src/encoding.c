@@ -198,6 +198,7 @@ bool can_calculate_difference(unsigned int pixel)
         print_chr('i');
         print_hex(i, 2);
         print_chr('\n');
+        print_hex(pixel >> 2, 8);
         print_hex(value, 2);
         print_chr('\n');
         print_chr('\n');
