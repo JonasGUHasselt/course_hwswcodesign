@@ -21,13 +21,13 @@ void print_str(const char *p)
 
 void print_dec(unsigned int val)
 {
-	int buffer[10];
-	int *p = buffer;
+	char buffer[10];
+	char *p = buffer;
 	while (val || p == buffer) {
 		print_chr('c');
 		unsigned int test = val % 10;
 		// *(p++) = (unsigned char)(val % 10);
-		*(p++) = test;
+		unsigned char mytest2 = (unsigned char)test;
 		print_chr('l');
 		val = val / 10;
 		print_chr('a');
