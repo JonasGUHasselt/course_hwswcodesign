@@ -191,9 +191,18 @@ void add_pixel_to_running_array(unsigned int pixel)
 
 bool can_calculate_difference(unsigned int pixel)
 {
+    //0XFF0000FF FF, 00FF0000 00, 0000FF00, 00, 000000FF FF
     for (char i = 0; (pixel >> i) > 0; i+=8)
     {
         char value = (pixel >> i) & 0xFF;
+        print_chr('\n');
+        print_chr('i');
+        print_hex(i, 2);
+        print_chr('\n');
+        print_hex(pixel >> 2, 8);
+        print_hex(value, 2);
+        print_chr('\n');
+        print_chr('\n');
         if (value != (char)0xFF && value !=(char)0x00){return false;}
     }   
     
