@@ -23,8 +23,9 @@ void print_dec(unsigned int val)
 {
 	print_chr('b');
 	char buffer[10];
+	print_chr('e');
 	char *p = buffer;
-
+	print_chr('g');
 	while (val || p == buffer) {
 		print_chr('c');
 		*(p++) = (unsigned char )(val % 10);
@@ -32,7 +33,9 @@ void print_dec(unsigned int val)
 		val = val / 10;
 		print_chr('a');
 	}
+	print_chr('i');
 	while (p != buffer) {
+		print_chr('n');
 		*((volatile uint32_t*)OUTPORT) = '0' + *(--p);
 	}
 }
