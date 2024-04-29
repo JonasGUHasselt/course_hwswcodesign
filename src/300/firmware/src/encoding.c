@@ -140,7 +140,11 @@ void reset_run_length_encoding(void)
 bool is_present_in_running_array(unsigned char pixel)
 {
     unsigned char index = get_index(pixel);
-
+    print_chr('\n');
+    print_hex(index, 2);
+    print_chr('\n');
+    print_hex(running_array[index], 8);
+    print_chr('\n');
     if (index != 0 && running_array[index] == 0)
     {
         return false;
@@ -185,10 +189,10 @@ void save_running_array_encoding(unsigned int pixel)
 void add_pixel_to_running_array(unsigned int pixel)
 {
     unsigned char index = get_index(pixel);
+    print_chr('\n');
+    print_hex(index, 2);
+    print_chr('\n');
     running_array[index] = pixel;
-    print_chr('\n');
-    print_hex(index,2);
-    print_chr('\n');
 }
 
 bool can_calculate_difference(unsigned int pixel)
