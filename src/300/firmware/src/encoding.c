@@ -193,7 +193,11 @@ bool can_calculate_difference(unsigned int pixel)
     for (char i = 0; (pixel >> i) > 0; i+=2)
     {
         signed char value = (pixel >> i) & 0xFF;
+        print_chr('\n');
         print_hex(value, 2);
+        print_chr('\n');
+        if (value != 0xFF) {print_chr('T');} else {print_chr('F');}
+        if (value !=0x00) {print_chr('TR');} else {print_chr('FA');}
         if (value != 0xFF && value !=0x00){return false;}
         
         return true;
