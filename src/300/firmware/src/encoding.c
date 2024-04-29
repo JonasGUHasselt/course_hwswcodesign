@@ -225,7 +225,7 @@ void save_difference_encoding(unsigned int difference)
     print_chr('\n');
     print_hex(difference, 8);
     print_chr('\n');
-    print_hex(((difference >> 16) & 0xFF) + 2, 8);
+    print_hex(((difference >> 16) & 0xFF) + 2, 2);
     print_chr('\n');
     print_hex(((difference >> 8) & 0xFF) + 2,2);
     print_chr('\n');
