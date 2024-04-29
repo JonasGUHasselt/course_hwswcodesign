@@ -207,13 +207,12 @@ int calculate_difference(unsigned int pixel)
 
     get_rgb_values(pixel, current_pixel);
 
-    char red_value = current_pixel[0]; 
-    char green_value = current_pixel[1];
-    char blue_value = current_pixel[2];
+    int red_value = current_pixel[0]; 
+    int green_value = current_pixel[1];
+    int blue_value = current_pixel[2];
 
-    difference += red_value - ((char) previous_pixel[0]);
+    difference += red_value - ((int) previous_pixel[0]);
     print_chr('\n');
-    print_hex((char) previous_pixel[1], 2);
     print_chr('\n');
     print_chr('r');
     print_hex(difference, 8);
