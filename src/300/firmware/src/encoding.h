@@ -19,10 +19,10 @@
 #define IMAGE_HEIGHT            (*(volatile unsigned int *) IMAGE_REG1_ADDRESS)
 #define IMAGE_PIXEL_VALUE      ((volatile unsigned int *) IMAGE_REG2_ADDRESS)
 
-#define IMAGE_PIXEL_VALUE1      ((volatile unsigned int *) IMAGE_REG3_ADDRESS)
-#define IMAGE_PIXEL_VALUE2      ((volatile unsigned int *) IMAGE_REG4_ADDRESS)
-#define IMAGE_PIXEL_VALUE3      ((volatile unsigned int *) IMAGE_REG5_ADDRESS)
-#define IMAGE_PIXEL_VALUE4      ((volatile unsigned int *) IMAGE_REG6_ADDRESS)
+#define IMAGE_PIXEL_VALUE1      (*(volatile unsigned int *) IMAGE_REG3_ADDRESS)
+#define IMAGE_PIXEL_VALUE2      (*(volatile unsigned int *) IMAGE_REG4_ADDRESS)
+#define IMAGE_PIXEL_VALUE3      (*(volatile unsigned int *) IMAGE_REG5_ADDRESS)
+#define IMAGE_PIXEL_VALUE4      (*(volatile unsigned int *) IMAGE_REG6_ADDRESS)
 
 void encode_image(void);
 void construct_header(void);
