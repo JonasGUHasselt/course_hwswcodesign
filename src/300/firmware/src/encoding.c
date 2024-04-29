@@ -54,7 +54,7 @@ void construct_body(void)
             print_chr('t');
         } else {
             print_chr('\n');
-            print_chr('e');
+            print_chr('o');
             save_run_length_encoding();
             reset_run_length_encoding();
         }
@@ -64,6 +64,7 @@ void construct_body(void)
         if (is_present_in_running_array(pixel))
         {
             save_running_array_encoding(pixel);
+            set_pixel_as_previous_pixel(pixel);
             pixel_handled = true;
         } else {
             add_pixel_to_running_array(pixel);
