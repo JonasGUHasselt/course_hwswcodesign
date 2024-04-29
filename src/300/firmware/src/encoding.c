@@ -218,8 +218,15 @@ unsigned int calculate_difference(unsigned int pixel)
     print_chr('\n');
     print_chr('\n');
     difference <<= 8;
+    print_hex(difference, 8);
     difference += green_value - previous_pixel[1];
+    print_chr('\n');
+    print_hex(difference, 8);
+    print_chr('\n');
     difference <<= 8;
+    print_chr('\n');
+    print_hex(difference, 8);
+    print_chr('\n');
     difference += blue_value - previous_pixel[2];
     print_chr('\n');
     print_chr('\n');
