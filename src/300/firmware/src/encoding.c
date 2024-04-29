@@ -92,6 +92,11 @@ void construct_body(void)
 
 void get_rgb_values(unsigned int pixel, unsigned char *rgb)
 {
+    print_chr('\n');
+    print_hex(pixel, 8);
+    print_chr('\n');
+    print_hex(pixel >> 24, 8);
+    print_chr('\n');
     rgb[0] =  pixel >> 24;
     rgb[1] = (pixel >> 16) & 0xFF;
     rgb[2] = (pixel >> 8) & 0xFF;
@@ -180,17 +185,7 @@ unsigned char get_index(unsigned int pixel)
 {
     unsigned char rgb_pixel[4]; 
     get_rgb_values(pixel, rgb_pixel);
-    print_chr('\n');
-    print_chr('\n');
-    print_hex(rgb_pixel[0], 2);
-    print_chr('\n');
-    print_hex(rgb_pixel[1], 2);
-    print_chr('\n');
-    print_hex(rgb_pixel[2], 2);
-    print_chr('\n');
-    print_hex(rgb_pixel[3], 2);
-    print_chr('\n');
-    print_chr('\n');
+
     return get_pixel_hash(rgb_pixel); 
 }
 
