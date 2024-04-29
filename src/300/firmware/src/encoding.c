@@ -71,7 +71,7 @@ void construct_body(void)
         if(can_calculate_difference(pixel))
         {
             print_chr('d');
-            int difference = calculate_difference(pixel);
+            unsigned int difference = calculate_difference(pixel);
             save_difference_encoding(difference);
         } else {
             print_chr('r');
@@ -200,10 +200,10 @@ bool can_calculate_difference(unsigned int pixel)
     }
 }
 
-int calculate_difference(unsigned int pixel)
+unsigned int calculate_difference(unsigned int pixel)
 {
     unsigned char current_pixel[4];
-    int difference;
+    unsigned int difference;
 
     get_rgb_values(pixel, current_pixel);
 
@@ -211,8 +211,7 @@ int calculate_difference(unsigned int pixel)
     unsigned char green_value = current_pixel[1];
     unsigned char blue_value = current_pixel[2];
 
-    print_hex((unsigned char) (((char) green_value) - ((char) previous_pixel[1])), 8);
-    difference += (red_value - ((char) previous_pixel[0]));
+    difference += (unsigned char)(((char) red_value) - ((char) previous_pixel[0]));
     print_chr('\n');
     print_chr('\n');
     print_chr('r');
@@ -220,7 +219,7 @@ int calculate_difference(unsigned int pixel)
     print_chr('\n');
     difference <<= 8;
     print_hex(difference, 8);
-    difference += (green_value - ((char) previous_pixel[1]));
+    difference += (unsigned char)(((char) green_value) - ((char) previous_pixel[1]));
     print_chr('\n');
     print_chr('g');
     print_hex(difference, 8);
@@ -228,7 +227,7 @@ int calculate_difference(unsigned int pixel)
     difference <<= 8;
     print_hex(difference, 8);
     print_chr('\n');
-    difference += (blue_value - ((char) previous_pixel[2]));
+    difference += (unsigned char) (((char)blue_value) - ((char) previous_pixel[2]));
     print_chr('\n');
     print_chr('b');
     print_hex(difference, 8);
@@ -237,7 +236,7 @@ int calculate_difference(unsigned int pixel)
     return difference;
 }
 
-void save_difference_encoding(int difference)
+void save_difference_encoding(unsigned int difference)
 {
     unsigned char difference_chunk = 0b01 << 2;
     print_chr('\n');
