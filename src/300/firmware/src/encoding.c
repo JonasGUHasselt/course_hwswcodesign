@@ -192,7 +192,7 @@ bool can_calculate_difference(unsigned int pixel)
 {
     for (char i = 0; (pixel >> i) > 0; i+=2)
     {
-        signed char value = (pixel >> i) & 0xFF;
+        char value = (pixel >> i) & 0xFF;
         if (value != (signed char)0xFF && value !=(signed char)0x00){return false;}
         
         return true;
@@ -206,9 +206,9 @@ unsigned int calculate_difference(unsigned int pixel)
 
     get_rgb_values(pixel, current_pixel);
 
-    signed char red_value =  current_pixel[0];
-    signed char green_value = current_pixel[1];
-    signed char blue_value = current_pixel[2];
+    unsigned char red_value = current_pixel[0]; 
+    unsigned char green_value = current_pixel[1];
+    unsigned char blue_value = current_pixel[2];
 
     difference += red_value - previous_pixel[0];
     difference <<= 2;
@@ -230,11 +230,11 @@ void save_difference_encoding(unsigned int difference)
     print_hex(difference >> 4 + 2, 8);
     print_chr('\n');
     print_chr('\n');
-    difference_chunk += (difference >> 4) + 2;
+    difference_chunk += ((signed char)(difference >> 4)) + 2;
     difference_chunk <<= 2;
-    difference_chunk += ((difference >> 2) & 0xFF) + 2;
+    difference_chunk += ((signed char)(difference >> 2) & 0xFF) + 2;
     difference_chunk <<= 2;
-    difference_chunk += (difference & 0xFF) + 2;
+    difference_chunk += ((signed char) difference & 0xFF) + 2;
     
     print_hex(difference_chunk, 2);
 }
