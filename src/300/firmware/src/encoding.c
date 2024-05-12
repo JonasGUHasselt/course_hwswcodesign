@@ -183,7 +183,6 @@ void add_pixel_to_running_array(unsigned int pixel)
 
 bool can_calculate_difference(unsigned int pixel)
 {
-    //0XFF0000FF FF, 00FF0000 00, 0000FF00, 00, 000000FF FF
     for (char i = 0; i < 32; i+=8)
     {
         char value = (pixel >> i) & 0xFF;
