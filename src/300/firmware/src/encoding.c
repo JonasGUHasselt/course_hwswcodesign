@@ -104,11 +104,6 @@ bool is_previous_pixel(unsigned int pixel)
                         && current_pixel[1] == previous_pixel[1] 
                         && current_pixel[2] == previous_pixel[2]
                         && current_pixel[3] == previous_pixel[3];*/
-    print_chr('\n');
-    print_chr('\n');
-    print_hex(CURRENT_EQUALS_PREVIOUS_PIXEL, 8);
-    print_chr('\n');
-    print_chr('\n');
 
     return (CURRENT_EQUALS_PREVIOUS_PIXEL == 0);
 }
