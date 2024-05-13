@@ -14,6 +14,15 @@
 #define IMAGE_HEIGHT            (*(volatile unsigned int *) IMAGE_REG1_ADDRESS)
 #define IMAGE_PIXEL_VALUE(index)(*(volatile unsigned int *) (IMAGE_REG2_ADDRESS + index*4))
 
+#define APB_QOI_BASEADDRESS    0x21000000 
+#define APB_REG0_ADDRESS       (APB_QOI_BASEADDRESS + 0*4)
+#define APB_REG1_ADDRESS       (APB_QOI_BASEADDRESS + 1*4)
+#define APB_REG2_ADDRESS       (APB_QOI_BASEADDRESS + 2*4)
+
+#define CURRENT_PIXEL                   (*(volatile unsigned int *) APB_REG0_ADDRESS)
+#define PREVIOUS_PIXEL                  (*(volatile unsigned int *) APB_REG1_ADDRESS)
+#define CURRENT_EQUALS_PREVIOUS_PIXEL   (*(volatile unsigned int *) APB_REG2_ADDRESS)
+
 void encode_image(void);
 void construct_header(void);
 void construct_body(void);

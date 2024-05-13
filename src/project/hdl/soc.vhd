@@ -59,6 +59,27 @@ end entity soc;
 
 architecture Behavioural of soc is
 
+    component APB_qoi is
+        generic (
+            G_BASE_ADDRESS : STD_LOGIC_VECTOR(32-1 downto 0) := x"00000000";
+            G_HIGH_ADDRESS : STD_LOGIC_VECTOR(32-1 downto 0) := x"FFFFFFFF"
+        );
+        port (
+            PCLK : IN STD_LOGIC;
+            PRESETn : IN STD_LOGIC;
+            PADDR : IN STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
+            PPROT : IN STD_LOGIC_VECTOR(C_PROT_WIDTH-1 downto 0);
+            PSELx : IN STD_LOGIC;
+            PENABLE : IN STD_LOGIC;
+            PWRITE : IN STD_LOGIC;
+            PWDATA : IN STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
+            PSTRB : IN STD_LOGIC_VECTOR(C_STRB_WIDTH-1 downto 0);
+            PREADY : OUT STD_LOGIC;
+            PRDATA : OUT STD_LOGIC_VECTOR(C_DATA_WIDTH-1 downto 0);
+            PSLVERR : OUT STD_LOGIC
+        );
+    end component;
+
     signal PCLK_i : STD_LOGIC;
     signal PRESETn_i : STD_LOGIC;
 
@@ -142,7 +163,7 @@ begin
     -------------------------------------------------------------------------------
     -- APB peripheral
     -------------------------------------------------------------------------------
-    APB_counter_inst00: component APB_counter generic map(
+    APB_qoi_inst00: component APB_qoi generic map(
         G_BASE_ADDRESS => C_BASE_ADDRESS_2,
         G_HIGH_ADDRESS => C_HIGH_ADDRESS_2) 
     port map(
@@ -159,7 +180,7 @@ begin
         PRDATA => PRDATA_COMP_2_i,
         PSLVERR => PSLVERR_COMP_2_i
     );
-
+    
     -------------------------------------------------------------------------------
     -- APB bus
     -------------------------------------------------------------------------------
@@ -281,7 +302,7 @@ begin
             LATCHED_IRQ => x"ffff_ffff",
             PROGADDR_RESET => x"0000_0000",
             PROGADDR_IRQ => x"0000_0010",
-            STACKADDR => x"0002_0000"
+            STACKADDR => x"7FFF_FFFF" --STACKADDR => x"0002_0000" 
         )
         port map (
             clk => PCLK_i,

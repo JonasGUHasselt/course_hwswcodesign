@@ -34,12 +34,15 @@ void construct_header(void)
 
 void construct_body(void)
 {
+    PREVIOUS_PIXEL = 0x000000FF;
+
     bool pixel_handled = false;
     int number_of_pixels = IMAGE_WIDTH * IMAGE_HEIGHT;
     for (int i=0; i < number_of_pixels ; i++)
     {
         pixel_handled = false;
         unsigned int pixel = IMAGE_PIXEL_VALUE(i);
+        CURRENT_PIXEL = pixel;  
         
         if (is_previous_pixel(pixel))
         {
@@ -93,16 +96,19 @@ void get_rgb_values(unsigned int pixel, unsigned char *rgb)
 
 bool is_previous_pixel(unsigned int pixel)
 {
-    unsigned char current_pixel[4];
+    /*unsigned char current_pixel[4];
 
-    get_rgb_values(pixel, current_pixel);
+    get_rgb_values(pixel, current_pixel);*/
 
-    bool is_same_pixel = current_pixel[0] == previous_pixel[0] 
+    /*bool is_same_pixel = current_pixel[0] == previous_pixel[0] 
                         && current_pixel[1] == previous_pixel[1] 
                         && current_pixel[2] == previous_pixel[2]
-                        && current_pixel[3] == previous_pixel[3];
-    
-    return is_same_pixel;
+                        && current_pixel[3] == previous_pixel[3];*/
+    print_chr('\n');
+    print_hex(CURRENT_EQUALS_PREVIOUS_PIXEL, 8);
+    print_chr('\n');
+
+    return (CURRENT_EQUALS_PREVIOUS_PIXEL == 0);
 }
 
 void increase_run_length_encoding(void)
@@ -240,6 +246,8 @@ void save_rgb_encoding(unsigned int pixel)
 
 void set_pixel_as_previous_pixel(unsigned int pixel)
 {
+    PREVIOUS_PIXEL = pixel;
+
     unsigned char current_pixel[4];
     get_rgb_values(pixel, current_pixel);
 
