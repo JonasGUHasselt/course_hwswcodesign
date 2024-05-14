@@ -34,8 +34,9 @@ void construct_header(void)
 
 void construct_body(void)
 {
-    RLE=(int)-1;
-    if (RLE == (int)-1)
+    int rle_default = -1;
+    RLE=rle_default;
+    if (RLE == rle_default)
     {
         print_chr('\n');
         print_chr('\n');
