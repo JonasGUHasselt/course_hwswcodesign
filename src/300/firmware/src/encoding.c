@@ -76,7 +76,7 @@ void construct_body(void)
         set_pixel_as_previous_pixel(pixel);
     }
 
-    if (run_length_encoding != -1)
+    if (RLE != -1)
     {
         save_run_length_encoding();
         reset_run_length_encoding();
