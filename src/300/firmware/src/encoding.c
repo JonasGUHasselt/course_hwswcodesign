@@ -6,7 +6,7 @@
 
 unsigned char previous_pixel[4] = {0x00, 0x00, 0x00, 0xFF}; 
 unsigned int running_array[64] = {};
-//long run_length_encoding = -1;
+long run_length_encoding = -1;
 
 void encode_image(void)
 {
@@ -34,20 +34,6 @@ void construct_header(void)
 
 void construct_body(void)
 {
-    int rle_default = -1;
-    RLE=rle_default;
-    print_chr('\n');
-    print_chr('\n');
-    print_hex(RLE, 8);
-    print_chr('\n');
-    print_chr('\n');
-    if (RLE == rle_default)
-    {
-        print_chr('\n');
-        print_chr('\n');
-        print_chr('\n');
-        print_chr('\n');
-    }
     PREVIOUS_PIXEL = 0x000000FF;
 
     bool pixel_handled = false;
@@ -89,7 +75,7 @@ void construct_body(void)
         set_pixel_as_previous_pixel(pixel);
     }
 
-    if (RLE != -1)
+    if (run_length_encoding != -1)
     {
         save_run_length_encoding();
         reset_run_length_encoding();
@@ -113,7 +99,7 @@ void increase_run_length_encoding(void)
     //bool is_max_size = run_length_encoding == MAX_RLE_SIZE;
     //if (is_max_size) {return;}
     //run_length_encoding++;
-    if (RLE == -1){print_chr('\n'); RLE = 0; return;}
+    if (run_length_encoding == -1){run_length_encoding = 0; RLE = 0; return;}
 
     INCREMENT_RLE = 1;
     INCREMENT_RLE = 0;
@@ -121,8 +107,7 @@ void increase_run_length_encoding(void)
 
 void save_run_length_encoding(void)
 {
-    // bool is_run_length_encoding = run_length_encoding != -1;
-    bool is_run_length_encoding = RLE != -1;
+    bool is_run_length_encoding = run_length_encoding != -1;
     
     if(!is_run_length_encoding) {return;}
 
@@ -133,6 +118,7 @@ void save_run_length_encoding(void)
 
 void reset_run_length_encoding(void)
 {
+    run_length_encoding = -1;
     RLE = -1;
 }
 
