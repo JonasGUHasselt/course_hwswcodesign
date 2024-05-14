@@ -6,7 +6,7 @@
 
 unsigned char previous_pixel[4] = {0x00, 0x00, 0x00, 0xFF}; 
 unsigned int running_array[64] = {};
-long run_length_encoding = -1;
+//long run_length_encoding = -1;
 
 void encode_image(void)
 {
@@ -34,6 +34,7 @@ void construct_header(void)
 
 void construct_body(void)
 {
+    RLE=-1;
     PREVIOUS_PIXEL = 0x000000FF;
 
     bool pixel_handled = false;
@@ -44,7 +45,7 @@ void construct_body(void)
         unsigned int pixel = IMAGE_PIXEL_VALUE(i);
         CURRENT_PIXEL = pixel;  
         
-        if (is_previous_pixel(pixel))
+        if (CURRENT_EQUALS_PREVIOUS_PIXEL == 0)
         {
             increase_run_length_encoding();
             pixel_handled = true;
@@ -94,43 +95,30 @@ void get_rgb_values(unsigned int pixel, unsigned char *rgb)
     rgb[3] = pixel & 0xFF;
 }
 
-bool is_previous_pixel(unsigned int pixel)
-{
-    /*unsigned char current_pixel[4];
-
-    get_rgb_values(pixel, current_pixel);*/
-
-    /*bool is_same_pixel = current_pixel[0] == previous_pixel[0] 
-                        && current_pixel[1] == previous_pixel[1] 
-                        && current_pixel[2] == previous_pixel[2]
-                        && current_pixel[3] == previous_pixel[3];*/
-
-    return (CURRENT_EQUALS_PREVIOUS_PIXEL == 0);
-}
-
 void increase_run_length_encoding(void)
 {
-    bool is_max_size = run_length_encoding == MAX_RLE_SIZE;
-
-    if (is_max_size) {return;}
-
-    run_length_encoding++;
+    //bool is_max_size = run_length_encoding == MAX_RLE_SIZE;
+    //if (is_max_size) {return;}
+    //run_length_encoding++;
+    INCREMENT_RLE = 1;
+    INCREMENT_RLE = 0;
 }
 
 void save_run_length_encoding(void)
 {
-    bool is_run_length_encoding = run_length_encoding != -1;
+    // bool is_run_length_encoding = run_length_encoding != -1;
+    bool is_run_length_encoding = RLE != -1;
     
     if(!is_run_length_encoding) {return;}
 
-    unsigned char rle_chunk = (0b11 << 6) + run_length_encoding; 
+    unsigned char rle_chunk = (0b11 << 6) + RLE; 
     
     print_hex(rle_chunk, 2);
 }
 
 void reset_run_length_encoding(void)
 {
-    run_length_encoding = -1;
+    RLE = -1;
 }
 
 bool is_present_in_running_array(unsigned int pixel)
