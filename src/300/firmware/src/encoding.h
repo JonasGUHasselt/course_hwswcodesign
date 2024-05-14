@@ -20,6 +20,7 @@
 #define APB_REG2_ADDRESS       (APB_QOI_BASEADDRESS + 2*4)
 #define APB_REG3_ADDRESS       (APB_QOI_BASEADDRESS + 3*4)
 #define APB_REG4_ADDRESS       (APB_QOI_BASEADDRESS + 4*4)
+#define APB_REG5_ADDRESS       (APB_QOI_BASEADDRESS + 5*4)
 
 #define CURRENT_PIXEL                   (*(volatile unsigned int *) APB_REG0_ADDRESS)
 #define PREVIOUS_PIXEL                  (*(volatile unsigned int *) APB_REG1_ADDRESS)
@@ -27,6 +28,8 @@
 
 #define RLE                 (*(volatile unsigned int *) APB_REG3_ADDRESS)
 #define INCREMENT_RLE       (*(volatile unsigned int *) APB_REG4_ADDRESS)
+
+#define CAN_CALCULATE      (*(volatile unsigned int *) APB_REG5_ADDRESS) 
 
 void encode_image(void);
 void construct_header(void);
