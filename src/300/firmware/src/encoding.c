@@ -111,11 +111,6 @@ void save_run_length_encoding(void)
     
     if(!is_run_length_encoding) {return;}
 
-    print_chr('\n');
-    print_chr('\n');
-    print_hex(RLE, 8);
-    print_chr('\n');
-    print_chr('\n');
     unsigned char rle_chunk = (0b11 << 6) + RLE; 
     
     print_hex(rle_chunk, 2);
