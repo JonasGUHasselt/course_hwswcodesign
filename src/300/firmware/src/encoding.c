@@ -119,7 +119,6 @@ void save_run_length_encoding(void)
 void reset_run_length_encoding(void)
 {
     run_length_encoding = -1;
-    RLE = -1;
 }
 
 bool is_present_in_running_array(unsigned int pixel)
