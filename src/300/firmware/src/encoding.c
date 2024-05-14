@@ -34,7 +34,7 @@ void construct_header(void)
 
 void construct_body(void)
 {
-    RLE=(signed)-1;
+    RLE=-1;
     PREVIOUS_PIXEL = 0x000000FF;
 
     bool pixel_handled = false;
@@ -76,7 +76,7 @@ void construct_body(void)
         set_pixel_as_previous_pixel(pixel);
     }
 
-    if (RLE != (signed) -1)
+    if (RLE != -1)
     {
         save_run_length_encoding();
         reset_run_length_encoding();
@@ -100,6 +100,8 @@ void increase_run_length_encoding(void)
     //bool is_max_size = run_length_encoding == MAX_RLE_SIZE;
     //if (is_max_size) {return;}
     //run_length_encoding++;
+    if (RLE == -1){RLE = 0; return;}
+
     INCREMENT_RLE = 1;
     INCREMENT_RLE = 0;
 }
@@ -107,7 +109,7 @@ void increase_run_length_encoding(void)
 void save_run_length_encoding(void)
 {
     // bool is_run_length_encoding = run_length_encoding != -1;
-    bool is_run_length_encoding = RLE != (signed)-1;
+    bool is_run_length_encoding = RLE != -1;
     
     if(!is_run_length_encoding) {return;}
 
@@ -118,7 +120,7 @@ void save_run_length_encoding(void)
 
 void reset_run_length_encoding(void)
 {
-    RLE = (signed)-1;
+    RLE = -1;
 }
 
 bool is_present_in_running_array(unsigned int pixel)
