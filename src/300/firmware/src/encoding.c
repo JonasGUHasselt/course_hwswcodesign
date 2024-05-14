@@ -100,7 +100,7 @@ void increase_run_length_encoding(void)
     //bool is_max_size = run_length_encoding == MAX_RLE_SIZE;
     //if (is_max_size) {return;}
     //run_length_encoding++;
-    if (RLE == -1){RLE = 0; return;}
+    if (RLE == -1){print_chr('\n'); RLE = 0; return;}
 
     INCREMENT_RLE = 1;
     INCREMENT_RLE = 0;
