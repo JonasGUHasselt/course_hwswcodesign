@@ -177,7 +177,7 @@ bool can_calculate_difference(unsigned int pixel)
 
 unsigned int calculate_difference(unsigned int pixel)
 {
-    /*unsigned char current_pixel[4];
+    unsigned char current_pixel[4];
     unsigned int difference;
 
     get_rgb_values(pixel, current_pixel);
@@ -191,12 +191,16 @@ unsigned int calculate_difference(unsigned int pixel)
     difference += (unsigned char)(green_value - previous_pixel[1]);
     difference <<= 8;
     difference += (unsigned char)(blue_value - previous_pixel[2]);
-    return difference;*/
     print_chr('\n');
     print_chr('\n');
+    print_chr('P');
     print_hex(PIXEL_DIFFERENCE, 8);
     print_chr('\n');
+    print_chr('A');
+    print_hex(difference, 8);
     print_chr('\n');
+    print_chr('\n');
+    return difference;
 }
 
 void save_difference_encoding(unsigned int difference)
