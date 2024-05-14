@@ -35,6 +35,13 @@ void construct_header(void)
 void construct_body(void)
 {
     RLE=-1;
+    if (RLE == -1)
+    {
+        print_chr('\n');
+        print_chr('\n');
+        print_chr('\n');
+        print_chr('\n');
+    }
     PREVIOUS_PIXEL = 0x000000FF;
 
     bool pixel_handled = false;
