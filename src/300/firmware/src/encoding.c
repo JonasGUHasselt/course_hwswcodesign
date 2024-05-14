@@ -36,6 +36,11 @@ void construct_body(void)
 {
     int rle_default = -1;
     RLE=rle_default;
+    print_chr('\n');
+    print_chr('\n');
+    print_hex(RLE, 8);
+    print_chr('\n');
+    print_chr('\n');
     if (RLE == rle_default)
     {
         print_chr('\n');
