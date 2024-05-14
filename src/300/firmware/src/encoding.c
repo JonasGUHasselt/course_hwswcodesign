@@ -6,7 +6,7 @@
 
 unsigned char previous_pixel[4] = {0x00, 0x00, 0x00, 0xFF}; 
 unsigned int running_array[64] = {};
-long run_length_encoding = -1;
+// long run_length_encoding = -1;
 
 void encode_image(void)
 {
@@ -36,13 +36,6 @@ void construct_body(void)
 {
     PREVIOUS_PIXEL = 0x000000FF;
     RLE = -1;
-    if (RLE == -1)
-    {
-        print_chr('\n');
-        print_chr('\n');
-        print_chr('\n');
-        print_chr('\n');
-    }
 
     bool pixel_handled = false;
     int number_of_pixels = IMAGE_WIDTH * IMAGE_HEIGHT;
@@ -83,7 +76,7 @@ void construct_body(void)
         set_pixel_as_previous_pixel(pixel);
     }
 
-    if (run_length_encoding != -1)
+    if (RLE != -1)
     {
         save_run_length_encoding();
         reset_run_length_encoding();
@@ -104,7 +97,7 @@ void get_rgb_values(unsigned int pixel, unsigned char *rgb)
 
 void increase_run_length_encoding(void)
 {
-    if (run_length_encoding == -1){run_length_encoding = 0; RLE = 0; return;}
+    if (RLE == -1){RLE = 0; return;}
 
     INCREMENT_RLE = 1;
     INCREMENT_RLE = 0;
@@ -112,7 +105,7 @@ void increase_run_length_encoding(void)
 
 void save_run_length_encoding(void)
 {
-    bool is_run_length_encoding = run_length_encoding != -1;
+    bool is_run_length_encoding = RLE != -1;
     
     if(!is_run_length_encoding) {return;}
 
@@ -123,7 +116,7 @@ void save_run_length_encoding(void)
 
 void reset_run_length_encoding(void)
 {
-    run_length_encoding = -1;
+    RLE = -1;
 }
 
 bool is_present_in_running_array(unsigned int pixel)
