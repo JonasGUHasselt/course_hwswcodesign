@@ -197,7 +197,10 @@ unsigned int calculate_difference(unsigned int pixel)
     print_hex(pixel, 8);
     print_chr('\n');
     print_chr('\n');
-    print_hex(previous_pixel,8);
+    print_hex(previous_pixel[0],2);
+    print_hex(previous_pixel[1],2);
+    print_hex(previous_pixel[2],2);
+    print_hex(previous_pixel[3],2);
     print_chr('\n');
     print_chr('\n');
     print_chr('P');
