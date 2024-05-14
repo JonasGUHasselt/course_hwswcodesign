@@ -172,13 +172,6 @@ void add_pixel_to_running_array(unsigned int pixel)
 
 bool can_calculate_difference(unsigned int pixel)
 {
-    // for (char i = 0; i < 32; i+=8)
-    // {
-    //     char value = (pixel >> i) & 0xFF;
-    //     if (value != (char)0xFF && value !=(char)0x00){return false;}
-    // }
-    
-    // return true;
     return CAN_CALCULATE == 1;
 }
 
