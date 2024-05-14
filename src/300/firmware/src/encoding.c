@@ -35,6 +35,14 @@ void construct_header(void)
 void construct_body(void)
 {
     PREVIOUS_PIXEL = 0x000000FF;
+    RLE = -1;
+    if (RLE == -1)
+    {
+        print_chr('\n');
+        print_chr('\n');
+        print_chr('\n');
+        print_chr('\n');
+    }
 
     bool pixel_handled = false;
     int number_of_pixels = IMAGE_WIDTH * IMAGE_HEIGHT;
@@ -96,9 +104,6 @@ void get_rgb_values(unsigned int pixel, unsigned char *rgb)
 
 void increase_run_length_encoding(void)
 {
-    //bool is_max_size = run_length_encoding == MAX_RLE_SIZE;
-    //if (is_max_size) {return;}
-    //run_length_encoding++;
     if (run_length_encoding == -1){run_length_encoding = 0; RLE = 0; return;}
 
     INCREMENT_RLE = 1;
